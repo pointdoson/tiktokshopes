@@ -1075,6 +1075,37 @@
   }
   applyI18n();
 
+  // Refine the language guess using the visitor's IP location (country),
+  // in case it disagrees with their browser's language setting (e.g. a
+  // Spanish-language browser physically in Germany). This runs in the
+  // background and only re-renders if it actually changes the outcome —
+  // the page never sits blank waiting on it, and if the lookup fails or
+  // is slow it just silently keeps the browser-language result above.
+  var GEO_COUNTRY_TO_LANG = {
+    DE: 'de', AT: 'de', // German-speaking
+    ES: 'es'
+  };
+  function applyGeoLang(){
+    if (!window.fetch) return;
+    var controller = ('AbortController' in window) ? new AbortController() : null;
+    var timer = setTimeout(function(){ if (controller) controller.abort(); }, 2500);
+    fetch('https://ipwho.is/', controller ? { signal: controller.signal } : {})
+      .then(function(res){ return res.json(); })
+      .then(function(data){
+        clearTimeout(timer);
+        if (!data || data.success === false) return;
+        var cc = (data.country_code || '').toUpperCase();
+        var geoLang = GEO_COUNTRY_TO_LANG[cc];
+        if (geoLang && geoLang !== LANG && I18N[geoLang]) {
+          LANG = geoLang;
+          document.documentElement.setAttribute('lang', LANG);
+          applyI18n();
+        }
+      })
+      .catch(function(){ clearTimeout(timer); /* geo lookup unavailable, keep browser-language result */ });
+  }
+  applyGeoLang();
+
   // Gallery dots + slides
   var totalSlides = 2;
   var currentSlide = 0;
