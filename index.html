@@ -62,7 +62,17 @@
     display:flex;align-items:center;justify-content:center;
     border:none;background:none;color:var(--text);
     flex-shrink:0;
+    position:relative;
   }
+  .cart-badge{
+    position:absolute;top:-3px;right:-3px;
+    min-width:16px;height:16px;padding:0 3px;
+    border-radius:999px;background:var(--pink);color:#fff;
+    font-size:10px;font-weight:800;line-height:1;
+    display:none;align-items:center;justify-content:center;
+    box-shadow:0 0 0 2px #fff;
+  }
+  .cart-badge.show{display:flex;}
   .store-chip{
     display:flex;align-items:center;gap:8px;flex:1;
   }
@@ -489,13 +499,55 @@
   }
   .discount-banner.show{display:flex;}
   .discount-banner svg{flex-shrink:0;}
+
+  /* ---------- Mini cart drawer ---------- */
+  .cart-overlay{
+    position:fixed;inset:0;z-index:150;
+    background:rgba(0,0,0,0.5);
+    display:flex;align-items:flex-end;justify-content:center;
+    opacity:0;pointer-events:none;
+    transition:opacity .25s;
+  }
+  .cart-overlay.show{opacity:1;pointer-events:auto;}
+  .cart-sheet{
+    width:100%;max-width:480px;
+    background:#fff;
+    border-radius:20px 20px 0 0;
+    padding:20px 18px calc(18px + env(safe-area-inset-bottom));
+    transform:translateY(100%);
+    transition:transform .3s cubic-bezier(.2,.8,.2,1);
+  }
+  .cart-overlay.show .cart-sheet{transform:translateY(0);}
+  .cart-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;}
+  .cart-head h3{font-size:16px;font-weight:800;}
+  .cart-close{width:28px;height:28px;border-radius:50%;border:none;background:var(--pill-gray);color:var(--text);display:flex;align-items:center;justify-content:center;}
+  .cart-item{display:flex;gap:12px;align-items:center;padding-bottom:16px;margin-bottom:16px;border-bottom:1px solid var(--border);}
+  .cart-item-thumb{width:60px;height:60px;border-radius:10px;background:#f2f2f2;flex-shrink:0;overflow:hidden;display:flex;align-items:center;justify-content:center;}
+  .cart-item-thumb img{width:100%;height:100%;object-fit:cover;}
+  .cart-item-info{flex:1;min-width:0;}
+  .cart-item-title{font-size:13px;font-weight:600;line-height:1.3;margin-bottom:4px;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;}
+  .cart-item-price{font-size:14px;font-weight:800;}
+  .cart-qty{display:flex;align-items:center;gap:10px;flex-shrink:0;}
+  .cart-qty button{width:26px;height:26px;border-radius:50%;border:1px solid var(--border);background:#fff;color:var(--text);font-size:15px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+  .cart-qty span{font-size:14px;font-weight:700;min-width:14px;text-align:center;}
+  .cart-remove{background:none;border:none;color:var(--text-soft);margin-top:6px;font-size:12px;text-decoration:underline;}
+  .cart-total-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;}
+  .cart-total-row span:first-child{font-size:13px;color:var(--text-soft);font-weight:600;}
+  .cart-total-row span:last-child{font-size:18px;font-weight:800;}
+  .cart-checkout-btn{
+    display:flex;align-items:center;justify-content:center;
+    width:100%;height:48px;border-radius:24px;border:none;
+    background:var(--pink);color:#fff;text-decoration:none;
+    font-size:15px;font-weight:800;margin-bottom:10px;
+  }
+  .cart-continue-btn{display:block;width:100%;text-align:center;background:none;border:none;color:var(--text-soft);font-size:13px;font-weight:600;padding:6px 0;}
 </style>
 </head>
 <body>
 
 <!-- Discount roulette -->
 <div class="roulette-overlay show" id="rouletteOverlay">
-  <button class="roulette-close" id="rouletteClose" aria-label="Cerrar" data-i18n-aria="ariaCloseRoulette">
+  <button class="roulette-close" id="rouletteClose" aria-hidden="true" tabindex="-1">
     <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
   </button>
 
@@ -539,6 +591,41 @@
   </div>
 </div>
 
+<!-- Mini cart -->
+<div class="cart-overlay" id="cartOverlay">
+  <div class="cart-sheet">
+    <div class="cart-head">
+      <h3 data-i18n="cartHeading">Tu carrito</h3>
+      <button class="cart-close" id="cartCloseBtn" aria-label="Cerrar">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="cart-item">
+      <div class="cart-item-thumb">
+        <img src="images/products/1.jpg" alt="Patinete eléctrico" data-i18n-alt="galleryAlt1" onerror="tryNextExt(this)">
+      </div>
+      <div class="cart-item-info">
+        <div class="cart-item-title" data-i18n="descTitleStrong">Patinete Eléctrico Xiaomi Scooter 5 Pro</div>
+        <div class="cart-item-price" id="cartItemPrice">299,00 €</div>
+        <button class="cart-remove" id="cartRemoveBtn" data-i18n="cartRemove">Quitar</button>
+      </div>
+      <div class="cart-qty">
+        <button id="cartQtyMinus" aria-label="Quitar uno">−</button>
+        <span id="cartQtyValue">1</span>
+        <button id="cartQtyPlus" aria-label="Añadir uno">+</button>
+      </div>
+    </div>
+    <div class="cart-total-row">
+      <span data-i18n="cartTotalLabel">Total</span>
+      <span id="cartTotal">299,00 €</span>
+    </div>
+    <!-- Checkout link: don't edit this href by hand — it's overwritten on load from
+         CHECKOUT_URL near the top of the <script> at the bottom of this file. -->
+    <a class="cart-checkout-btn" id="cartCheckoutBtn" href="https://pay.hotmart.com/Q107611061L?off=6s5oln1e" target="_blank" rel="noopener noreferrer" data-i18n="checkoutBtn">Finalizar compra</a>
+    <button class="cart-continue-btn" id="cartContinueBtn" data-i18n="cartContinue">Seguir comprando</button>
+  </div>
+</div>
+
 <div class="app" id="app">
 
   <!-- Header -->
@@ -565,6 +652,7 @@
       </button>
       <button class="icon-btn" aria-label="Carrito" data-i18n-aria="ariaCart" id="cartTopBtn">
         <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 002 1.6h9.7a2 2 0 002-1.6L23 6H6"/></svg>
+        <span class="cart-badge" id="cartBadge">0</span>
       </button>
     </div>
   </header>
@@ -948,7 +1036,9 @@
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg>
     </button>
     <button class="bb-btn cart" id="addToCartBtn" data-i18n="addToCartBtn">Añadir al carrito</button>
-    <a class="bb-btn checkout" href="https://pay.hotmart.com/Q107611061L?off=6s5oln1e" target="_blank" rel="noopener noreferrer" data-i18n="checkoutBtn">Finalizar compra</a>
+    <!-- Checkout link: don't edit this href by hand — it's overwritten on load from
+         CHECKOUT_URL near the top of the <script> at the bottom of this file. -->
+    <a class="bb-btn checkout" id="mainCheckoutBtn" href="https://pay.hotmart.com/Q107611061L?off=6s5oln1e" target="_blank" rel="noopener noreferrer" data-i18n="checkoutBtn">Finalizar compra</a>
   </div>
 </div>
 
@@ -1027,6 +1117,9 @@
       toastShowingReviews: 'Alle Bewertungen werden angezeigt',
       toastSaved: 'Gespeichert', toastRemoved: 'Aus Favoriten entfernt',
       toastDiscountApplied: '90% Rabatt angewendet',
+      toastMaxQty: 'Es sind nur 3 Einheiten verfügbar',
+      cartHeading: 'Warenkorb', cartTotalLabel: 'Gesamt',
+      cartRemove: 'Entfernen', cartContinue: 'Weiter einkaufen',
       roulettePill: 'Exklusives Angebot', wheelPlusOne: '+1 DREH',
       ariaCloseRoulette: 'Schließen', ariaSpin: 'Glücksrad drehen', hubText: 'Drehen',
       rouletteSubtitle: 'Du hast 3 Versuche. Viel Glück!',
@@ -1106,6 +1199,105 @@
   }
   applyGeoLang();
 
+  // =====================================================================
+  // CHECKOUT LINK(S) — EDIT HERE
+  // CHECKOUT_URL is the single source of truth for every "Finalizar compra"
+  // button on the page (bottom bar + mini cart). Change the URL below and
+  // it updates everywhere automatically — don't edit the href attributes
+  // in the HTML directly, they get overwritten from this constant on load.
+  //
+  // If you later get separate Hotmart offers per quantity (2x, 3x bundles),
+  // fill them into QTY_CHECKOUT_LINKS further down instead of here.
+  // =====================================================================
+  var CHECKOUT_URL = 'https://pay.hotmart.com/Q107611061L?off=6s5oln1e';
+  document.getElementById('mainCheckoutBtn').setAttribute('href', CHECKOUT_URL);
+  document.getElementById('cartCheckoutBtn').setAttribute('href', CHECKOUT_URL);
+
+  // ---------- Mini cart ----------
+  var unitPrice = 299.00; // kept in sync with #priceCurrent (the roulette discount updates this too)
+  var cartQty = 0;
+  var MAX_QTY = 3; // stock cap — trying to go past this shows the "only 3 available" message
+  var cartBadge = document.getElementById('cartBadge');
+  var cartOverlay = document.getElementById('cartOverlay');
+  var cartQtyValue = document.getElementById('cartQtyValue');
+  var cartItemPrice = document.getElementById('cartItemPrice');
+  var cartTotal = document.getElementById('cartTotal');
+  var cartCheckoutBtn = document.getElementById('cartCheckoutBtn');
+
+  // EDIT HERE to give each quantity its own bundle price. Leave a tier as
+  // `null` to just multiply unitPrice by that quantity (today's default).
+  // Example: QTY_PRICES = { 1: null, 2: 49.90, 3: 69.90 };
+  var QTY_PRICES = {
+    1: null,
+    2: null,
+    3: null
+  };
+
+  // EDIT HERE once you have separate checkout offers per quantity — for now
+  // every tier reuses CHECKOUT_URL on purpose.
+  var QTY_CHECKOUT_LINKS = {
+    1: CHECKOUT_URL,
+    2: CHECKOUT_URL,
+    3: CHECKOUT_URL
+  };
+
+  // European-style money format: thousands with "." and decimals with ",",
+  // e.g. 1234.5 -> "1.234,50 €" — matches the rest of the page (es/de).
+  function formatMoney(n){
+    var fixed = n.toFixed(2).replace('.', ',');
+    var parts = fixed.split(',');
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+    return parts.join(',') + ' €';
+  }
+  function cartTotalFor(qty){
+    var override = QTY_PRICES[qty];
+    return (override != null) ? override : unitPrice * qty;
+  }
+  function renderCart(){
+    var qty = Math.max(cartQty, 1);
+    cartItemPrice.textContent = formatMoney(unitPrice);
+    cartTotal.textContent = formatMoney(cartTotalFor(qty));
+    cartQtyValue.textContent = qty;
+    cartCheckoutBtn.setAttribute('href', QTY_CHECKOUT_LINKS[qty] || CHECKOUT_URL);
+    if (cartQty > 0) {
+      cartBadge.textContent = cartQty;
+      cartBadge.classList.add('show');
+    } else {
+      cartBadge.classList.remove('show');
+    }
+  }
+  function openCart(){
+    renderCart();
+    cartOverlay.classList.add('show');
+  }
+  function closeCart(){
+    cartOverlay.classList.remove('show');
+  }
+  document.getElementById('cartCloseBtn').addEventListener('click', closeCart);
+  document.getElementById('cartContinueBtn').addEventListener('click', closeCart);
+  cartOverlay.addEventListener('click', function(e){
+    if (e.target === cartOverlay) closeCart();
+  });
+  document.getElementById('cartQtyPlus').addEventListener('click', function(){
+    if (cartQty >= MAX_QTY) {
+      showToast(T('toastMaxQty', 'Solo hay ' + MAX_QTY + ' unidades disponibles'));
+      return;
+    }
+    cartQty++;
+    renderCart();
+  });
+  document.getElementById('cartQtyMinus').addEventListener('click', function(){
+    if (cartQty > 1) {
+      cartQty--;
+      renderCart();
+    }
+  });
+  document.getElementById('cartRemoveBtn').addEventListener('click', function(){
+    cartQty = 0;
+    renderCart();
+    closeCart();
+  });
+
   // Gallery dots + slides
   var totalSlides = 2;
   var currentSlide = 0;
@@ -1175,10 +1367,20 @@
     window._toastTimer = setTimeout(function(){ toast.classList.remove('show'); }, 1800);
   }
   document.getElementById('addToCartBtn').addEventListener('click', function(){
+    if (cartQty >= MAX_QTY) {
+      showToast(T('toastMaxQty', 'Solo hay ' + MAX_QTY + ' unidades disponibles'));
+      return;
+    }
+    cartQty++;
+    renderCart();
     showToast(T('toastAdded', 'Añadido al carrito'));
   });
   document.getElementById('cartTopBtn').addEventListener('click', function(){
-    showToast(T('toastCartEmpty', 'Tu carrito está vacío'));
+    if (cartQty > 0) {
+      openCart();
+    } else {
+      showToast(T('toastCartEmpty', 'Tu carrito está vacío'));
+    }
   });
   var reviewsMoreBtn = document.getElementById('reviewsMoreBtn');
   var moreReviews = document.getElementById('moreReviews');
@@ -1207,7 +1409,6 @@
     var overlay = document.getElementById('rouletteOverlay');
     var wheel = document.getElementById('wheel');
     var hub = document.getElementById('wheelHub');
-    var closeBtn = document.getElementById('rouletteClose');
     var message = document.getElementById('rouletteMessage');
     var cta = document.getElementById('rouletteCta');
     var attemptDots = document.querySelectorAll('#rouletteAttempts .attempt-dot');
@@ -1293,10 +1494,13 @@
       priceCurrent.innerHTML = '29<sup>,90 €</sup>';
       priceDiscount.textContent = '-90%';
       discountBanner.classList.add('show');
+      unitPrice = 29.90;
+      renderCart();
     }
 
     hub.addEventListener('click', spin);
-    closeBtn.addEventListener('click', closeRoulette);
+    // The close (X) button is intentionally decorative — closing without
+    // spinning isn't allowed, so no click handler is wired up here.
     cta.addEventListener('click', function(){
       applyDiscount();
       closeRoulette();
