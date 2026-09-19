@@ -1,0 +1,1525 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z7VWDN4MTZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Z7VWDN4MTZ');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Xiaomi Scooter 5 Pro</title>
+<style>
+  :root{
+    --bg:#f5f5f5;
+    --card:#ffffff;
+    --text:#111111;
+    --text-soft:#6b6b6b;
+    --border:#ececec;
+    --teal:#00b578;
+    --pink:#fe2c55;
+    --pink-dark:#e0264a;
+    --pill-gray:#f0f0f0;F
+  }
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  html,body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  body{
+    display:flex;
+    justify-content:center;
+  }
+  .app{
+    width:100%;
+    max-width:480px;
+    min-height:100vh;
+    background:var(--card);
+    position:relative;
+    padding-bottom:78px;
+  }
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky;
+    top:0;
+    z-index:50;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:12px 14px;
+    background:rgba(255,255,255,0.97);
+    border-bottom:1px solid var(--border);
+  }
+  .icon-btn{
+    width:30px;height:30px;
+    display:flex;align-items:center;justify-content:center;
+    border:none;background:none;color:var(--text);
+    flex-shrink:0;
+    position:relative;
+  }
+  .cart-badge{
+    position:absolute;top:-3px;right:-3px;
+    min-width:16px;height:16px;padding:0 3px;
+    border-radius:999px;background:var(--pink);color:#fff;
+    font-size:10px;font-weight:800;line-height:1;
+    display:none;align-items:center;justify-content:center;
+    box-shadow:0 0 0 2px #fff;
+  }
+  .cart-badge.show{display:flex;}
+  .store-chip{
+    display:flex;align-items:center;gap:8px;flex:1;
+  }
+  .store-avatar{
+    width:26px;height:26px;border-radius:50%;
+    background:#111111;
+    display:flex;align-items:center;justify-content:center;
+    font-size:12px;font-weight:700;color:#ffffff;letter-spacing:.02em;
+    position:relative;overflow:hidden;flex-shrink:0;
+  }
+  .store-avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+  .store-name{
+    font-size:15px;font-weight:700;
+    white-space:nowrap;
+    display:flex;align-items:center;gap:4px;
+  }
+  .verified-badge{flex-shrink:0;color:#1d9bf0;}
+  .header-actions{
+    display:flex;align-items:center;gap:4px;margin-left:auto;
+  }
+
+  /* ---------- Gallery ---------- */
+  .gallery{
+    position:relative;
+    width:100%;
+    aspect-ratio:1/1;
+    background:linear-gradient(135deg,#dff3ec,#eaf6ff);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+    touch-action:pan-y;
+  }
+  .gallery-slides{position:relative;width:100%;height:100%;}
+  .gallery-slide{position:absolute;inset:0;display:none;align-items:center;justify-content:center;}
+  .gallery-slide.active{display:flex;}
+  .gallery-slide img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;}
+  .gallery-placeholder{
+    display:flex;flex-direction:column;align-items:center;gap:10px;
+    color:#9aa7b0;
+  }
+  .gallery-placeholder svg{width:52px;height:52px;}
+  .gallery-placeholder span{font-size:13px;font-weight:500;letter-spacing:.01em;}
+  .gallery-zone{position:absolute;top:0;bottom:0;width:50%;z-index:2;}
+  .gallery-zone.left{left:0;}
+  .gallery-zone.right{right:0;}
+  .dots{
+    position:absolute;bottom:14px;left:0;right:0;
+    display:flex;justify-content:center;gap:6px;
+  }
+  .dot{width:6px;height:6px;border-radius:50%;background:rgba(0,0,0,0.18);transition:.15s;}
+  .dot.active{background:#111;width:14px;border-radius:3px;}
+
+  /* ---------- Price block ---------- */
+  .price-block{padding:16px 14px 10px;position:relative;}
+  .bookmark-btn{
+    position:absolute;top:14px;right:14px;
+    width:30px;height:30px;border:none;background:none;color:var(--text);
+  }
+  .price-row{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;}
+  .price-current{font-size:30px;font-weight:800;}
+  .price-current sup{font-size:16px;font-weight:700;}
+  .price-old{font-size:15px;color:var(--text-soft);text-decoration:line-through;}
+  .price-discount{
+    font-size:12px;font-weight:700;color:var(--pink);
+    background:rgba(254,44,85,0.08);padding:2px 6px;border-radius:4px;
+  }
+  .price-vat{font-size:12px;color:var(--text-soft);margin-top:4px;}
+  .shipping-line{
+    display:flex;align-items:center;gap:6px;
+    font-size:13px;color:var(--text-soft);margin-top:10px;flex-wrap:wrap;
+  }
+  .shipping-line b{color:var(--text);font-weight:600;}
+  .shipping-line svg{flex-shrink:0;}
+  .free-shipping{
+    color:var(--teal);font-weight:600;font-size:13px;margin-top:4px;
+    display:flex;align-items:center;gap:5px;
+  }
+  .free-shipping svg{flex-shrink:0;}
+
+  /* ---------- Title / seller ---------- */
+  .title-block{padding:6px 14px 14px;border-bottom:8px solid var(--bg);}
+  .product-title{font-size:16px;font-weight:600;line-height:1.35;margin-bottom:8px;}
+  .seller-row{
+    display:flex;align-items:center;gap:6px;font-size:13px;color:var(--text-soft);margin-bottom:6px;
+  }
+  .seller-row a{color:#1a73c1;text-decoration:none;font-weight:600;}
+  .sold-count{display:flex;align-items:center;gap:5px;font-size:13px;color:var(--text-soft);margin-bottom:10px;}
+  .badge-row{display:flex;gap:8px;flex-wrap:wrap;}
+  .badge{
+    font-size:12px;padding:6px 10px;border-radius:6px;font-weight:600;
+  }
+  .badge.gray{background:var(--pill-gray);color:#333;}
+  .badge.teal{background:rgba(0,181,120,0.1);color:var(--teal);}
+
+ /* ---------- Color selector ---------- */
+  .section{padding:16px 14px;border-bottom:8px solid var(--bg);}
+  .section-label{font-size:14px;font-weight:700;margin-bottom:12px;}
+  .section-label span{font-weight:400;color:var(--text-soft);}
+  .swatches{display:flex;gap:10px;}
+  .swatch{
+    width:80px;
+    border:1.5px solid var(--border);
+    border-radius:10px;
+    padding:6px;
+    text-align:center;
+    cursor:pointer;
+  }
+  .swatch.selected{border-color:var(--text);}
+  .swatch-color{
+    width:100%;aspect-ratio:1/1;border-radius:7px;margin-bottom:6px;
+  }
+  .swatch-color.negro{background:linear-gradient(to bottom,#1c1c1c 0%,#1c1c1c 82%,#800020 82%,#800020 100%);}
+  .swatch-color.gris{background:linear-gradient(135deg,#b9c2c9,#7c8994);}
+  .swatch-color.rojo{background:linear-gradient(135deg,#ff6a6a,#e0264a);}
+  .swatch-label{font-size:11px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+
+  /* ---------- Shipping & returns ---------- */
+  .info-row{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--border);}
+  .info-row:last-child{border-bottom:none;}
+  .info-icon{
+    width:22px;height:22px;flex-shrink:0;color:var(--text-soft);margin-top:2px;
+  }
+  .info-body{flex:1;}
+  .info-title{font-size:14px;font-weight:600;color:var(--teal);margin-bottom:4px;}
+  .info-title.plain{color:var(--text);}
+  .info-sub{font-size:12.5px;color:var(--text-soft);line-height:1.5;}
+  .info-sub b{color:var(--text);font-weight:600;}
+  .chevron{margin-left:auto;color:var(--text-soft);align-self:center;}
+
+  /* ---------- Protections ---------- */
+  .protections{display:flex;justify-content:space-between;gap:4px;margin-bottom:16px;text-align:center;}
+  .protection-item{display:flex;flex-direction:column;align-items:center;gap:6px;flex:1;}
+  .protection-item svg{color:#1a73c1;}
+  .protection-item span{font-size:10.5px;color:var(--text-soft);line-height:1.3;}
+  .payment-badges{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px;}
+  .pay-card{
+    width:48px;height:32px;border-radius:6px;background:#fff;
+    border:1px solid var(--border);
+    display:flex;align-items:center;justify-content:center;gap:2px;
+    box-shadow:0 1px 2px rgba(0,0,0,0.05);
+    overflow:hidden;flex-shrink:0;
+  }
+  .pay-card svg{display:block;}
+  .pay-card span{font-weight:800;letter-spacing:-0.01em;white-space:nowrap;}
+  .payment-note{font-size:11.5px;color:var(--text-soft);line-height:1.5;}
+
+  /* ---------- Reviews ---------- */
+  .reviews-summary{display:flex;align-items:center;gap:20px;margin-bottom:18px;}
+  .reviews-score-block{text-align:center;flex-shrink:0;}
+  .reviews-score{font-size:34px;font-weight:800;line-height:1;}
+  .reviews-stars{display:flex;gap:2px;color:#ffa900;margin:6px 0 4px;}
+  .reviews-count{font-size:11.5px;color:var(--text-soft);white-space:nowrap;}
+  .rating-bars{flex:1;display:flex;flex-direction:column;gap:5px;}
+  .rating-bar-row{display:flex;align-items:center;gap:8px;font-size:11px;color:var(--text-soft);}
+  .rating-bar-row span{width:8px;}
+  .rating-bar-track{flex:1;height:5px;background:var(--pill-gray);border-radius:3px;overflow:hidden;}
+  .rating-bar-fill{height:100%;background:#ffa900;border-radius:3px;}
+
+  .review-card{padding:16px 0;border-top:1px solid var(--border);}
+  .review-header{display:flex;align-items:center;gap:10px;margin-bottom:8px;}
+  .review-avatar{
+    width:34px;height:34px;border-radius:50%;background:#ececec;color:#555;
+    display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0;
+  }
+  .review-meta{flex:1;min-width:0;}
+  .review-name{font-size:13.5px;font-weight:600;}
+  .review-date{font-size:11.5px;color:var(--text-soft);margin-top:1px;}
+  .review-stars-row{display:flex;gap:2px;color:#ffa900;margin-bottom:8px;}
+  .review-text{font-size:13.5px;color:#333;line-height:1.6;margin-bottom:10px;}
+  .review-photos{display:flex;gap:6px;flex-wrap:wrap;}
+  .review-photo{
+    position:relative;width:64px;height:64px;border-radius:8px;background:#f4f4f4;border:1px solid var(--border);
+    display:flex;align-items:center;justify-content:center;color:#b7bec4;flex-shrink:0;overflow:hidden;
+  }
+  .review-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;}
+  .review-photo svg{width:22px;height:22px;position:relative;z-index:0;}
+  .more-reviews{display:none;}
+  .more-reviews.open{display:block;}
+  .reviews-more-btn{
+    display:block;width:100%;text-align:center;padding:14px 0 2px;
+    font-size:13.5px;font-weight:600;color:var(--text);background:none;border:none;
+  }
+
+  /* ---------- Description ---------- */
+  .desc-heading{font-size:18px;font-weight:800;margin-bottom:14px;}
+  .desc-subheading{font-size:15px;font-weight:700;margin-bottom:10px;}
+  .desc-text{font-size:14px;color:#333;line-height:1.7;margin-bottom:14px;}
+  .desc-title-strong{font-weight:700;}
+  .feature-list{list-style:none;margin-bottom:14px;}
+  .feature-list li{
+    font-size:14px;color:#333;line-height:1.6;padding-left:16px;position:relative;margin-bottom:6px;
+  }
+  .feature-list li::before{
+    content:"•";position:absolute;left:0;color:var(--text);font-weight:700;
+  }
+  .feature-list b{font-weight:700;}
+  .more-content{display:none;}
+  .more-content.open{display:block;}
+  .view-more-btn{
+    display:flex;align-items:center;gap:4px;justify-content:center;
+    width:100%;background:none;border:none;font-size:14px;font-weight:600;color:var(--text);
+    padding:10px 0;
+  }
+
+  .accordion{border-top:1px solid var(--border);}
+  .accordion-item{border-bottom:1px solid var(--border);}
+  .accordion-head{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:16px 0;font-size:15px;font-weight:700;cursor:pointer;background:none;border:none;width:100%;
+    text-align:left;color:var(--text);
+  }
+  .accordion-head svg{transition:transform .2s;flex-shrink:0;color:var(--text-soft);}
+  .accordion-item.open .accordion-head svg{transform:rotate(180deg);}
+  .accordion-body{display:none;padding:0 0 16px;font-size:13.5px;color:#444;line-height:1.7;}
+  .accordion-item.open .accordion-body{display:block;}
+
+  /* ---------- Back to top ---------- */
+  .back-to-top{
+    position:fixed;
+    left:50%;
+    bottom:92px;
+    transform:translateX(-50%) translateY(20px);
+    background:rgba(20,20,20,0.85);
+    color:#fff;
+    font-size:12.5px;
+    font-weight:600;
+    padding:9px 18px;
+    border-radius:999px;
+    border:none;
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .2s, transform .2s;
+    z-index:60;
+    max-width:calc(480px - 28px);
+  }
+  .back-to-top.show{opacity:1;transform:translateX(-50%) translateY(0);pointer-events:auto;}
+
+  /* ---------- Sticky bottom bar ---------- */
+  .bottom-bar{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    display:flex;
+    justify-content:center;
+    z-index:55;
+  }
+  .bottom-bar-inner{
+    width:100%;max-width:480px;
+    display:flex;align-items:center;gap:10px;
+    padding:10px 14px;
+    background:#fff;
+    border-top:1px solid var(--border);
+    padding-bottom:calc(10px + env(safe-area-inset-bottom));
+  }
+  .bb-icon{
+    width:42px;height:42px;flex-shrink:0;border-radius:50%;
+    border:1px solid var(--border);background:none;
+    display:flex;align-items:center;justify-content:center;color:var(--text);
+  }
+  .bb-btn{
+    flex:1;height:44px;border-radius:22px;border:none;font-size:14.5px;font-weight:700;
+  }
+  .bb-btn.cart{background:var(--pill-gray);color:var(--text);}
+  .bb-btn.checkout{
+    background:var(--pink);color:#fff;text-decoration:none;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .bb-btn.checkout:active{background:var(--pink-dark);}
+
+  .toast{
+    position:fixed;
+    top:70px;left:50%;
+    transform:translateX(-50%) translateY(-10px);
+    background:rgba(20,20,20,0.9);color:#fff;font-size:13px;font-weight:600;
+    padding:9px 16px;border-radius:8px;opacity:0;pointer-events:none;
+    transition:opacity .2s, transform .2s;z-index:70;
+  }
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+
+  /* ---------- Discount roulette ---------- */
+  body.roulette-locked{overflow:hidden;}
+  body.roulette-locked .app{filter:blur(7px);pointer-events:none;user-select:none;}
+  body.roulette-locked .bottom-bar{filter:blur(7px);pointer-events:none;}
+
+  .roulette-overlay{
+    position:fixed;inset:0;z-index:200;
+    background:rgba(10,10,12,0.68);
+    display:flex;align-items:center;justify-content:center;
+    padding:24px;
+    opacity:0;pointer-events:none;
+    transition:opacity .25s;
+  }
+  .roulette-overlay.show{opacity:1;pointer-events:auto;}
+
+  .roulette-close{
+    position:absolute;top:18px;right:18px;
+    width:32px;height:32px;border-radius:50%;
+    background:rgba(255,255,255,0.12);border:none;color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    z-index:220;
+  }
+
+  .roulette-content{
+    width:100%;max-width:300px;
+    display:flex;flex-direction:column;align-items:center;
+    text-align:center;
+  }
+
+  .roulette-pill{
+    background:#111111;color:#ffffff;
+    font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+    padding:9px 20px;border-radius:999px;
+    margin-bottom:22px;
+    box-shadow:0 8px 18px rgba(0,0,0,0.35);
+  }
+
+  .roulette-subtitle{
+    font-size:12.5px;color:rgba(255,255,255,0.75);margin-top:18px;font-weight:500;
+  }
+
+  .wheel-wrap{
+    position:relative;width:250px;height:250px;
+  }
+  .wheel-pointer{
+    position:absolute;top:-9px;left:50%;transform:translateX(-50%);
+    width:0;height:0;
+    border-left:11px solid transparent;
+    border-right:11px solid transparent;
+    border-top:17px solid var(--pink);
+    z-index:5;
+    filter:drop-shadow(0 3px 4px rgba(0,0,0,0.35));
+  }
+  .wheel-bezel{
+    position:absolute;inset:0;border-radius:50%;
+    background:#ffffff;
+    padding:6px;
+    box-shadow:0 18px 40px rgba(0,0,0,0.45);
+  }
+  .wheel{
+    position:relative;width:100%;height:100%;border-radius:50%;
+    overflow:hidden;
+    transition:transform 3.2s cubic-bezier(.17,.67,.16,.99);
+    box-shadow:inset 0 0 0 2px rgba(17,17,17,0.06);
+    background:conic-gradient(from 0deg,
+      #ffffff 0deg 90deg,
+      var(--pink) 90deg 180deg,
+      #ffffff 180deg 270deg,
+      var(--pink) 270deg 360deg);
+  }
+  .wheel-seg-labels{position:absolute;inset:0;}
+  .wheel-label{
+    position:absolute;top:50%;left:50%;width:0;height:0;
+  }
+  .wheel-label span{
+    position:absolute;
+    display:block;
+    width:74px;
+    left:-37px;
+    top:-8px;
+    text-align:center;
+    line-height:1.15;
+    font-weight:800;
+    letter-spacing:.01em;
+    white-space:nowrap;
+  }
+  .wheel-label.on-white span{color:#111111;}
+  .wheel-label.on-pink span{color:#ffffff;}
+  .wheel-label.plain span{font-size:12.5px;}
+  .wheel-label.prize span{font-size:16px;top:-10px;}
+
+  .wheel-hub{
+    position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+    width:64px;height:64px;border-radius:50%;
+    background:var(--pink);
+    color:#ffffff;font-size:13px;font-weight:800;letter-spacing:.03em;text-transform:uppercase;
+    display:flex;align-items:center;justify-content:center;text-align:center;
+    border:3px solid #fff;
+    z-index:6;cursor:pointer;
+    box-shadow:0 6px 16px rgba(254,44,85,0.45);
+  }
+  .wheel-hub:disabled{opacity:1;cursor:default;}
+
+  .roulette-attempts{
+    display:flex;justify-content:center;gap:7px;margin-top:20px;
+  }
+  .attempt-dot{
+    width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.25);
+  }
+  .attempt-dot.used{background:var(--pink);}
+
+  .roulette-message{
+    min-height:18px;font-size:13.5px;font-weight:700;color:#fff;margin-top:12px;
+  }
+  .roulette-message.win{color:#3ddc8a;}
+  .roulette-message.bonus{color:#ffffff;}
+
+  .roulette-cta{
+    display:none;margin-top:16px;width:100%;height:46px;border-radius:23px;border:none;
+    background:var(--pink);color:#fff;
+    font-size:14px;font-weight:800;letter-spacing:.01em;
+  }
+  .roulette-cta.show{display:block;}
+
+  .confetti-layer{position:fixed;inset:0;z-index:210;pointer-events:none;overflow:hidden;}
+  .confetti-piece{
+    position:absolute;top:-16px;
+    border-radius:2px;
+    animation-name:confetti-fall;
+    animation-timing-function:cubic-bezier(.25,.46,.45,.94);
+    animation-fill-mode:forwards;
+  }
+  @keyframes confetti-fall{
+    0%{transform:translate(0,0) rotate(0deg);opacity:1;}
+    85%{opacity:1;}
+    100%{transform:translate(var(--drift),var(--fall)) rotate(var(--rot));opacity:0;}
+  }
+
+  .discount-banner{
+    display:none;
+    align-items:center;gap:8px;
+    background:rgba(0,181,120,0.08);color:var(--teal);
+    font-size:12px;font-weight:700;
+    padding:8px 10px;border-radius:8px;margin-top:10px;
+  }
+  .discount-banner.show{display:flex;}
+  .discount-banner svg{flex-shrink:0;}
+
+  /* ---------- Mini cart drawer ---------- */
+  .cart-overlay{
+    position:fixed;inset:0;z-index:150;
+    background:rgba(0,0,0,0.5);
+    display:flex;align-items:flex-end;justify-content:center;
+    opacity:0;pointer-events:none;
+    transition:opacity .25s;
+  }
+  .cart-overlay.show{opacity:1;pointer-events:auto;}
+  .cart-sheet{
+    width:100%;max-width:480px;
+    background:#fff;
+    border-radius:20px 20px 0 0;
+    padding:20px 18px calc(18px + env(safe-area-inset-bottom));
+    transform:translateY(100%);
+    transition:transform .3s cubic-bezier(.2,.8,.2,1);
+  }
+  .cart-overlay.show .cart-sheet{transform:translateY(0);}
+  .cart-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;}
+  .cart-head h3{font-size:16px;font-weight:800;}
+  .cart-close{width:28px;height:28px;border-radius:50%;border:none;background:var(--pill-gray);color:var(--text);display:flex;align-items:center;justify-content:center;}
+  .cart-item{display:flex;gap:12px;align-items:center;padding-bottom:16px;margin-bottom:16px;border-bottom:1px solid var(--border);}
+  .cart-item-thumb{width:60px;height:60px;border-radius:10px;background:#f2f2f2;flex-shrink:0;overflow:hidden;display:flex;align-items:center;justify-content:center;}
+  .cart-item-thumb img{width:100%;height:100%;object-fit:cover;}
+  .cart-item-info{flex:1;min-width:0;}
+  .cart-item-title{font-size:13px;font-weight:600;line-height:1.3;margin-bottom:4px;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;}
+  .cart-item-price{font-size:14px;font-weight:800;}
+  .cart-qty{display:flex;align-items:center;gap:10px;flex-shrink:0;}
+  .cart-qty button{width:26px;height:26px;border-radius:50%;border:1px solid var(--border);background:#fff;color:var(--text);font-size:15px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+  .cart-qty span{font-size:14px;font-weight:700;min-width:14px;text-align:center;}
+  .cart-remove{background:none;border:none;color:var(--text-soft);margin-top:6px;font-size:12px;text-decoration:underline;}
+  .cart-total-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;}
+  .cart-total-row span:first-child{font-size:13px;color:var(--text-soft);font-weight:600;}
+  .cart-total-row span:last-child{font-size:18px;font-weight:800;}
+  .cart-checkout-btn{
+    display:flex;align-items:center;justify-content:center;
+    width:100%;height:48px;border-radius:24px;border:none;
+    background:var(--pink);color:#fff;text-decoration:none;
+    font-size:15px;font-weight:800;margin-bottom:10px;
+  }
+  .cart-continue-btn{display:block;width:100%;text-align:center;background:none;border:none;color:var(--text-soft);font-size:13px;font-weight:600;padding:6px 0;}
+
+  /* ---------- Live sales notifications ---------- */
+  .sales-notif{
+    position:fixed;top:62px;left:50%;
+    width:calc(100% - 24px);max-width:456px;
+    z-index:58;
+    display:flex;align-items:center;gap:11px;
+    padding:10px 12px;
+    background:#fff;border:1px solid var(--border);border-radius:14px;
+    box-shadow:0 10px 28px rgba(0,0,0,0.14);
+    overflow:hidden;
+    opacity:0;pointer-events:none;
+    transform:translate(-50%,-14px);
+    transition:opacity .3s, transform .35s cubic-bezier(.2,.8,.2,1);
+  }
+  .sales-notif.show{opacity:1;transform:translate(-50%,0);}
+  .sales-thumb{
+    position:relative;width:46px;height:46px;border-radius:10px;
+    background:#f2f2f2;flex-shrink:0;overflow:hidden;
+    display:flex;align-items:center;justify-content:center;color:#b7bec4;
+  }
+  .sales-thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;}
+  .sales-thumb svg{position:relative;z-index:0;}
+  .sales-body{min-width:0;flex:1;}
+  .sales-line1{font-size:13px;line-height:1.25;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .sales-line1 strong{font-weight:800;}
+  .sales-line1 span{color:var(--text-soft);font-weight:500;}
+  .sales-line2{font-size:12px;color:var(--text-soft);line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .sales-line3{display:flex;align-items:center;gap:6px;margin-top:3px;font-size:11px;font-weight:600;}
+  .sales-time{color:var(--text-soft);}
+  .sales-time.live{color:var(--pink);}
+  .sales-live{display:block;position:relative;width:7px;height:7px;border-radius:50%;background:var(--pink);flex-shrink:0;}
+  .sales-live::after{content:"";position:absolute;inset:0;border-radius:50%;background:var(--pink);animation:sales-pulse 1.4s ease-out infinite;}
+  @keyframes sales-pulse{0%{transform:scale(1);opacity:.6;}100%{transform:scale(2.8);opacity:0;}}
+  .sales-clock{flex-shrink:0;color:var(--text-soft);}
+  .sales-verified{display:flex;align-items:center;gap:3px;color:var(--teal);}
+  .sales-verified svg{flex-shrink:0;}
+  .sales-bar{position:absolute;left:0;bottom:0;height:2px;width:100%;background:var(--pink);transform-origin:left;transform:scaleX(0);}
+  .sales-notif.show .sales-bar{animation:sales-bar linear forwards;animation-duration:var(--dur,5s);}
+  @keyframes sales-bar{from{transform:scaleX(1);}to{transform:scaleX(0);}}
+</style>
+</head>
+<body>
+
+<!-- Discount roulette -->
+<div class="roulette-overlay show" id="rouletteOverlay">
+  <button class="roulette-close" id="rouletteClose" aria-hidden="true" tabindex="-1">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+  </button>
+
+  <div class="confetti-layer" id="confettiLayer"></div>
+
+  <div class="roulette-content">
+    <div class="roulette-pill">Oferta exclusiva</div>
+
+    <div class="wheel-wrap">
+      <div class="wheel-pointer"></div>
+      <div class="wheel-bezel">
+        <div class="wheel" id="wheel">
+          <div class="wheel-seg-labels">
+            <div class="wheel-label plain on-white" style="transform:rotate(45deg) translate(0,-68px)">
+              <span style="transform:rotate(-45deg)">15% OFF</span>
+            </div>
+            <div class="wheel-label plain on-pink" style="transform:rotate(135deg) translate(0,-68px)">
+              <span style="transform:rotate(-135deg)">+1 GIRO</span>
+            </div>
+            <div class="wheel-label prize on-white" style="transform:rotate(225deg) translate(0,-66px)">
+              <span style="transform:rotate(-225deg)">99% OFF</span>
+            </div>
+            <div class="wheel-label plain on-pink" style="transform:rotate(315deg) translate(0,-68px)">
+              <span style="transform:rotate(-315deg)">35% OFF</span>
+            </div>
+          </div>
+        </div>
+        <button class="wheel-hub" id="wheelHub" aria-label="Girar ruleta">Girar</button>
+      </div>
+    </div>
+
+    <div class="roulette-attempts" id="rouletteAttempts">
+      <div class="attempt-dot"></div>
+      <div class="attempt-dot"></div>
+      <div class="attempt-dot"></div>
+    </div>
+
+    <div class="roulette-subtitle" id="rouletteSubtitle">Tienes 3 intentos. ¡Buena suerte!</div>
+    <div class="roulette-message" id="rouletteMessage"></div>
+    <button class="roulette-cta" id="rouletteCta">Aplicar descuento y ver el iphone</button>
+  </div>
+</div>
+
+<!-- Mini cart -->
+<div class="cart-overlay" id="cartOverlay">
+  <div class="cart-sheet">
+    <div class="cart-head">
+      <h3>Tu carrito</h3>
+      <button class="cart-close" id="cartCloseBtn" aria-label="Cerrar">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="cart-item">
+      <div class="cart-item-thumb">
+        <img src="images/products/1.jpg" alt="Patinete eléctrico" onerror="tryNextExt(this)">
+      </div>
+      <div class="cart-item-info">
+        <div class="cart-item-title">Apple iPhone 18 Pro Max 256GB</div>
+        <div class="cart-item-price" id="cartItemPrice">€1.619,00</div>
+        <button class="cart-remove" id="cartRemoveBtn">Quitar</button>
+      </div>
+      <div class="cart-qty">
+        <button id="cartQtyMinus" aria-label="Quitar uno">−</button>
+        <span id="cartQtyValue">1</span>
+        <button id="cartQtyPlus" aria-label="Añadir uno">+</button>
+      </div>
+    </div>
+    <div class="cart-total-row">
+      <span>Total</span>
+      <span id="cartTotal">€1.619,00</span>
+    </div>
+    <!-- Checkout link: don't edit this href by hand — it's overwritten on load from
+         CHECKOUT_URL near the top of the <script> at the bottom of this file. -->
+    <a class="cart-checkout-btn" id="cartCheckoutBtn" href="https://pay.hotmart.com/Q107611061L?off=thpjpj6o" target="_blank" rel="noopener noreferrer">Finalizar compra</a>
+    <button class="cart-continue-btn" id="cartContinueBtn">Seguir comprando</button>
+  </div>
+</div>
+
+<div class="app" id="app">
+
+  <!-- Header -->
+  <header>
+    <button class="icon-btn" onclick="history.back()" aria-label="Volver">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <div class="store-chip">
+      <div class="store-avatar">
+        <img src="images/logo/logo.png" alt="Logo de la tienda" onerror="tryNextExt(this)">
+        <span>UM</span>
+      </div>
+      <div class="store-name">
+        Tiktok Shop
+        <svg class="verified-badge" width="15" height="15" viewBox="0 0 24 24" aria-label="Tienda verificada"><circle cx="12" cy="12" r="12" fill="#1d9bf0"/><path d="M7.5 12.5l3 3 6-6.5" stroke="#fff" stroke-width="2.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+    </div>
+    <div class="header-actions">
+      <button class="icon-btn" aria-label="Buscar">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+      </button>
+      <button class="icon-btn" aria-label="Compartir">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v7a1 1 0 001 1h14a1 1 0 001-1v-7"/><path d="M16 6l-4-4-4 4"/><path d="M12 2v14"/></svg>
+      </button>
+      <button class="icon-btn" aria-label="Carrito" id="cartTopBtn">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 002 1.6h9.7a2 2 0 002-1.6L23 6H6"/></svg>
+        <span class="cart-badge" id="cartBadge">0</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Gallery -->
+  <div class="gallery" id="gallery">
+    <div class="gallery-slides" id="gallerySlides">
+      <div class="gallery-slide active" data-index="0">
+        <div class="gallery-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9.5" r="1.5"/><path d="M21 15l-5-5-4 4-2-2-6 6"/></svg>
+          <span>Imagen del producto próximamente</span>
+        </div>
+        <img src="images/products/1.jpg" alt="Patinete eléctrico - foto 1" onerror="tryNextExt(this)">
+      </div>
+      <div class="gallery-slide" data-index="1">
+        <div class="gallery-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9.5" r="1.5"/><path d="M21 15l-5-5-4 4-2-2-6 6"/></svg>
+          <span>Imagen del producto próximamente</span>
+        </div>
+        <img src="images/products/2.jpg" alt="Patinete eléctrico - foto 2" onerror="tryNextExt(this)">
+      </div>
+    </div>
+    <div class="gallery-zone left" onclick="moveDot(-1)"></div>
+    <div class="gallery-zone right" onclick="moveDot(1)"></div>
+    <div class="dots" id="dots"></div>
+  </div>
+
+  <!-- Price -->
+  <div class="price-block">
+    <button class="bookmark-btn" id="bookmarkBtn" aria-label="Guardar">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg>
+    </button>
+    <div class="price-row">
+      <span class="price-current" id="priceCurrent">€1.619,00<sup>.00</sup></span>
+      <span class="price-old" id="priceOld">€1.619,00</span>
+      <span class="price-discount" id="priceDiscount">-50%</span>
+    </div>
+    <div class="price-vat">Impuestos incluidos</div>
+    <div class="shipping-line">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="7" width="15" height="11" rx="1"/><path d="M16 10h3l3 3v5h-6z"/><circle cx="6" cy="20" r="1.6"/><circle cx="17.5" cy="20" r="1.6"/></svg>
+      <span><b>Envío gratis</b> &nbsp;|&nbsp; Entrega en 48 horas</span>
+    </div>
+    <div class="free-shipping">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+      <span>Envío gratis a todo Europa</span>
+    </div>
+    <div class="discount-banner" id="discountBanner">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+      <span>Descuento de la ruleta aplicado a tu compra</span>
+    </div>
+  </div>
+
+  <!-- Title / seller -->
+  <div class="title-block">
+    <div class="product-title">Apple iPhone 18 Pro Max, Burdeos, 256 GB, 6.9" OLED Super Retina XDR, 5G, Chip A20 Pro, Siri AI, iOS</div>
+    <div class="seller-row"><span>Vendido por</span> <a href="#">Tiktok Shop</a></div>
+    <div class="sold-count">
+      <span>574 vendidos</span>
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg>
+    </div>
+    <div class="badge-row">
+      <span class="badge gray">Garantía de devolución 30 días</span>
+      <span class="badge teal">Cupón de 99% de descuento</span>
+    </div>
+  </div>
+
+  <!-- Color -->
+  <div class="section">
+    <div class="section-label"><span>Color:</span> <span id="colorLabel">Burdeos</span></div>
+    <div class="swatches" id="swatches">
+      <div class="swatch selected" data-color="Burdeos">
+        <div class="swatch-color negro"></div>
+        <div class="swatch-label">Burdeos</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Shipping & returns -->
+  <div class="section">
+    <div class="section-label" style="margin-bottom:2px;">Envío y devoluciones</div>
+    <div class="info-row">
+      <div class="info-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="7" width="15" height="11" rx="1"/><path d="M16 10h3l3 3v5h-6z"/><circle cx="6" cy="20" r="1.6"/><circle cx="17.5" cy="20" r="1.6"/></svg>
+      </div>
+      <div class="info-body">
+        <div class="info-title">Entrega en 48 horas</div>
+        <div class="info-sub">Recíbelo en un plazo de <b>48 horas</b> tras la confirmación del pedido</div>
+      </div>
+      <div class="chevron">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M9 6l6 6-6 6"/></svg>
+      </div>
+    </div>
+    <div class="info-row">
+      <div class="info-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 11-3-6.7"/><path d="M21 3v6h-6"/></svg>
+      </div>
+      <div class="info-body">
+        <div class="info-title plain">Política de devolución</div>
+        <div class="info-sub">Devolución gratuita en 30 días. No se necesita etiqueta en la mayoría de los casos.</div>
+      </div>
+      <div class="chevron">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M9 6l6 6-6 6"/></svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- Protections + payments -->
+  <div class="section">
+    <div class="protections">
+      <div class="protection-item">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/><circle cx="7" cy="15" r="1"/></svg>
+        <span>Garantía de pago</span>
+      </div>
+      <div class="protection-item">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 018 0v3"/></svg>
+        <span>Privacidad de datos</span>
+      </div>
+      <div class="protection-item">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/></svg>
+        <span>Protección de envío</span>
+      </div>
+      <div class="protection-item">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9.5 15V9.5a2 2 0 012-2h1a2 2 0 010 4h-3M9.5 12.5H13a2 2 0 010 4h-1a2 2 0 01-2-2"/></svg>
+        <span>Garantía de reembolso</span>
+      </div>
+      <div class="protection-item">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.5 8.5 0 10-15.3 5.2L4 20l3.5-1.5a8.5 8.5 0 0013.5-7z"/></svg>
+        <span>Soporte 24h</span>
+      </div>
+    </div>
+    <div class="payment-badges">
+      <div class="pay-card" aria-label="Visa">
+        <svg width="26" height="26" viewBox="0 0 24 24" style="fill:#1A1F71"><path d="M9.112 8.262L5.97 15.758H3.92L2.374 9.775c-.094-.368-.175-.503-.461-.658C1.447 8.864.677 8.627 0 8.479l.046-.217h3.3a.904.904 0 01.894.764l.817 4.338 2.018-5.102zm8.033 5.049c.008-1.979-2.736-2.088-2.717-2.972.006-.269.262-.555.822-.628a3.66 3.66 0 011.913.336l.34-1.59a5.207 5.207 0 00-1.814-.333c-1.917 0-3.266 1.02-3.278 2.479-.012 1.079.963 1.68 1.698 2.04.756.367 1.01.603 1.006.931-.005.504-.602.725-1.16.734-.975.015-1.54-.263-1.992-.473l-.351 1.642c.453.208 1.289.39 2.156.398 2.037 0 3.37-1.006 3.377-2.564m5.061 2.447H24l-1.565-7.496h-1.656a.883.883 0 00-.826.55l-2.909 6.946h2.036l.405-1.12h2.488zm-2.163-2.656l1.02-2.815.588 2.815zm-8.16-4.84l-1.603 7.496H8.34l1.605-7.496z"/></svg>
+      </div>
+      <div class="pay-card" aria-label="Mastercard">
+        <svg width="26" height="26" viewBox="0 0 24 24" style="fill:#EB001B"><path d="M11.343 18.031c.058.049.12.098.181.146-1.177.783-2.59 1.238-4.107 1.238C3.32 19.416 0 16.096 0 12c0-4.095 3.32-7.416 7.416-7.416 1.518 0 2.931.456 4.105 1.238-.06.051-.12.098-.165.15C9.6 7.489 8.595 9.688 8.595 12c0 2.311 1.001 4.51 2.748 6.031zm5.241-13.447c-1.52 0-2.931.456-4.105 1.238.06.051.12.098.165.15C14.4 7.489 15.405 9.688 15.405 12c0 2.31-1.001 4.507-2.748 6.031-.058.049-.12.098-.181.146 1.177.783 2.588 1.238 4.107 1.238C20.68 19.416 24 16.096 24 12c0-4.094-3.32-7.416-7.416-7.416zM12 6.174c-.096.075-.189.15-.28.231C10.156 7.764 9.169 9.765 9.169 12c0 2.236.987 4.236 2.551 5.595.09.08.185.158.28.232.096-.074.189-.152.28-.232 1.563-1.359 2.551-3.359 2.551-5.595 0-2.235-.987-4.236-2.551-5.595-.09-.08-.184-.156-.28-.231z"/></svg>
+      </div>
+      <div class="pay-card" aria-label="American Express" style="background:#006FCF;border-color:#006FCF;">
+        <svg width="30" height="30" viewBox="0 0 24 24" style="fill:#fff"><path d="M16.015 14.378c0-.32-.135-.496-.344-.622-.21-.12-.464-.135-.81-.135h-1.543v2.82h.675v-1.027h.72c.24 0 .39.024.478.125.12.13.104.38.104.55v.35h.66v-.555c-.002-.25-.017-.376-.108-.516-.06-.08-.18-.18-.33-.234l.02-.008c.18-.072.48-.297.48-.747zm-.87.407l-.028-.002c-.09.053-.195.058-.33.058h-.81v-.63h.824c.12 0 .24 0 .33.05.098.048.156.147.15.255 0 .12-.045.215-.134.27zM20.297 15.837H19v.6h1.304c.676 0 1.05-.278 1.05-.884 0-.28-.066-.448-.187-.582-.153-.133-.392-.193-.73-.207l-.376-.015c-.104 0-.18 0-.255-.03-.09-.03-.15-.105-.15-.21 0-.09.017-.166.09-.21.083-.046.177-.066.272-.06h1.23v-.602h-1.35c-.704 0-.958.437-.958.84 0 .9.776.855 1.407.87.104 0 .18.015.225.06.046.03.082.106.082.18 0 .077-.035.15-.08.18-.06.053-.15.07-.277.07zM0 0v10.096L.81 8.22h1.75l.225.464V8.22h2.043l.45 1.02.437-1.013h6.502c.295 0 .56.057.756.236v-.23h1.787v.23c.307-.17.686-.23 1.12-.23h2.606l.24.466v-.466h1.918l.254.465v-.466h1.858v3.948H20.87l-.36-.6v.585h-2.353l-.256-.63h-.583l-.27.614h-1.213c-.48 0-.84-.104-1.08-.24v.24h-2.89v-.884c0-.12-.03-.12-.105-.135h-.105v1.036H6.067v-.48l-.21.48H4.69l-.202-.48v.465H2.235l-.256-.624H1.4l-.256.624H0V24h23.786v-7.108c-.27.135-.613.18-.973.18H21.09v-.255c-.21.165-.57.255-.914.255H14.71v-.9c0-.12-.018-.12-.12-.12h-.075v1.022h-1.8v-1.066c-.298.136-.643.15-.928.136h-.214v.915h-2.18l-.54-.617-.57.6H4.742v-3.93h3.61l.518.602.554-.6h2.412c.28 0 .74.03.942.225v-.24h2.177c.202 0 .644.045.903.225v-.24h3.265v.24c.163-.164.508-.24.803-.24h1.89v.24c.194-.15.464-.24.84-.24h1.176V0H0zM21.156 14.955c.004.005.006.012.01.016.01.01.024.01.032.02l-.042-.035zM23.828 13.082h.065v.555h-.065zM23.865 15.03v-.005c-.03-.025-.046-.048-.075-.07-.15-.153-.39-.215-.764-.225l-.36-.012c-.12 0-.194-.007-.27-.03-.09-.03-.15-.105-.15-.21 0-.09.03-.16.09-.204.076-.045.15-.05.27-.05h1.223v-.588h-1.283c-.69 0-.96.437-.96.84 0 .9.78.855 1.41.87.104 0 .18.015.224.06.046.03.076.106.076.18 0 .07-.034.138-.09.18-.045.056-.136.07-.27.07h-1.288v.605h1.287c.42 0 .734-.118.9-.36h.03c.09-.134.135-.3.135-.523 0-.24-.045-.39-.135-.526zM18.597 14.208v-.583h-2.235V16.458h2.235v-.585h-1.57v-.57h1.533v-.584h-1.532v-.51M13.51 8.787h.685V11.6h-.684zM13.126 9.543l-.007.006c0-.314-.13-.5-.34-.624-.217-.125-.47-.135-.81-.135H10.43v2.82h.674v-1.034h.72c.24 0 .39.03.487.12.122.136.107.378.107.548v.354h.677v-.553c0-.25-.016-.375-.11-.516-.09-.107-.202-.19-.33-.237.172-.07.472-.3.472-.75zm-.855.396h-.015c-.09.054-.195.056-.33.056H11.1v-.623h.825c.12 0 .24.004.33.05.09.04.15.128.15.25s-.047.22-.134.266zM15.92 9.373h.632v-.6h-.644c-.464 0-.804.105-1.02.33-.286.3-.362.69-.362 1.11 0 .512.123.833.36 1.074.232.238.645.31.97.31h.78l.255-.627h1.39l.262.627h1.36v-2.11l1.272 2.11h.95l.002.002V8.786h-.684v1.963l-1.18-1.96h-1.02V11.4L18.11 8.744h-1.004l-.943 2.22h-.3c-.177 0-.362-.03-.468-.134-.125-.15-.186-.36-.186-.662 0-.285.08-.51.194-.63.133-.135.272-.165.516-.165zm1.668-.108l.464 1.118v.002h-.93l.466-1.12zM2.38 10.97l.254.628H4V9.393l.972 2.205h.584l.973-2.202.015 2.202h.69v-2.81H6.118l-.807 1.904-.876-1.905H3.343v2.663L2.205 8.787h-.997L.01 11.597h.72l.26-.626h1.39zm-.688-1.705l.46 1.118-.003.002h-.915l.457-1.12zM11.856 13.62H9.714l-.85.923-.825-.922H5.346v2.82H8l.855-.932.824.93h1.302v-.94h.838c.6 0 1.17-.164 1.17-.945l-.006-.003c0-.78-.598-.93-1.128-.93zM7.67 15.853l-.014-.002H6.02v-.557h1.47v-.574H6.02v-.51H7.7l.733.82-.764.824zm2.642.33l-1.03-1.147 1.03-1.108v2.253zm1.553-1.258h-.885v-.717h.885c.24 0 .42.098.42.344 0 .243-.15.372-.42.372zM9.967 9.373v-.586H7.73V11.6h2.237v-.58H8.4v-.564h1.527V9.88H8.4v-.507"/></svg>
+      </div>
+      <div class="pay-card" aria-label="PayPal">
+        <svg width="24" height="24" viewBox="0 0 24 24" style="fill:#002991"><path d="M15.607 4.653H8.941L6.645 19.251H1.82L4.862 0h7.995c3.754 0 6.375 2.294 6.473 5.513-.648-.478-2.105-.86-3.722-.86m6.57 5.546c0 3.41-3.01 6.853-6.958 6.853h-2.493L11.595 24H6.74l1.845-11.538h3.592c4.208 0 7.346-3.634 7.153-6.949a5.24 5.24 0 0 1 2.848 4.686M9.653 5.546h6.408c.907 0 1.942.222 2.363.541-.195 2.741-2.655 5.483-6.441 5.483H8.714Z"/></svg>
+      </div>
+      <div class="pay-card" aria-label="Apple Pay" style="background:#000;border-color:#000;">
+        <svg width="34" height="34" viewBox="0 0 24 24" style="fill:#fff"><path d="M2.15 4.318a42.16 42.16 0 0 0-.454.003c-.15.005-.303.013-.452.04a1.44 1.44 0 0 0-1.06.772c-.07.138-.114.278-.14.43-.028.148-.037.3-.04.45A10.2 10.2 0 0 0 0 6.222v11.557c0 .07.002.138.003.207.004.15.013.303.04.452.027.15.072.291.142.429a1.436 1.436 0 0 0 .63.63c.138.07.278.115.43.142.148.027.3.036.45.04l.208.003h20.194l.207-.003c.15-.004.303-.013.452-.04.15-.027.291-.071.428-.141a1.432 1.432 0 0 0 .631-.631c.07-.138.115-.278.141-.43.027-.148.036-.3.04-.45.002-.07.003-.138.003-.208l.001-.246V6.221c0-.07-.002-.138-.004-.207a2.995 2.995 0 0 0-.04-.452 1.446 1.446 0 0 0-1.2-1.201 3.022 3.022 0 0 0-.452-.04 10.448 10.448 0 0 0-.453-.003zm0 .512h19.942c.066 0 .131.002.197.003.115.004.25.01.375.032.109.02.2.05.287.094a.927.927 0 0 1 .407.407.997.997 0 0 1 .094.288c.022.123.028.258.031.374.002.065.003.13.003.197v11.552c0 .065 0 .13-.003.196-.003.115-.009.25-.032.375a.927.927 0 0 1-.5.693 1.002 1.002 0 0 1-.286.094 2.598 2.598 0 0 1-.373.032l-.2.003H1.906c-.066 0-.133-.002-.196-.003a2.61 2.61 0 0 1-.375-.032c-.109-.02-.2-.05-.288-.094a.918.918 0 0 1-.406-.407 1.006 1.006 0 0 1-.094-.288 2.531 2.531 0 0 1-.032-.373 9.588 9.588 0 0 1-.002-.197V6.224c0-.065 0-.131.002-.197.004-.114.01-.248.032-.375.02-.108.05-.199.094-.287a.925.925 0 0 1 .407-.406 1.03 1.03 0 0 1 .287-.094c.125-.022.26-.029.375-.032.065-.002.131-.002.196-.003zm4.71 3.7c-.3.016-.668.199-.88.456-.191.22-.36.58-.316.918.338.03.675-.169.888-.418.205-.258.345-.603.308-.955zm2.207.42v5.493h.852v-1.877h1.18c1.078 0 1.835-.739 1.835-1.812 0-1.07-.742-1.805-1.808-1.805zm.852.719h.982c.739 0 1.161.396 1.161 1.089 0 .692-.422 1.092-1.164 1.092h-.979zm-3.154.3c-.45.01-.83.28-1.05.28-.235 0-.593-.264-.981-.257a1.446 1.446 0 0 0-1.23.747c-.527.908-.139 2.255.374 2.995.249.366.549.769.944.754.373-.014.52-.242.973-.242.454 0 .586.242.98.235.41-.007.667-.366.915-.733.286-.417.403-.82.41-.841-.007-.008-.79-.308-.797-1.209-.008-.754.615-1.113.644-1.135-.352-.52-.9-.578-1.09-.593a1.123 1.123 0 0 0-.092-.002zm8.204.397c-.99 0-1.606.533-1.652 1.256h.777c.072-.358.369-.586.845-.586.502 0 .803.266.803.711v.309l-1.097.064c-.951.054-1.488.484-1.488 1.184 0 .72.548 1.207 1.332 1.207.526 0 1.032-.281 1.264-.727h.019v.659h.788v-2.76c0-.803-.62-1.317-1.591-1.317zm1.94.072l1.446 4.009c0 .003-.073.24-.073.247-.125.41-.33.571-.711.571-.069 0-.206 0-.267-.015v.666c.06.011.267.019.335.019.83 0 1.226-.312 1.568-1.283l1.5-4.214h-.868l-1.012 3.259h-.015l-1.013-3.26zm-1.167 2.189v.316c0 .521-.45.917-1.024.917-.442 0-.731-.228-.731-.579 0-.342.278-.56.769-.593z"/></svg>
+      </div>
+      <div class="pay-card" aria-label="Google Pay">
+        <svg width="30" height="30" viewBox="0 0 24 24" style="fill:#5f6368"><path d="M3.963 7.235A3.963 3.963 0 00.422 9.419a3.963 3.963 0 000 3.559 3.963 3.963 0 003.541 2.184c1.07 0 1.97-.352 2.627-.957.748-.69 1.18-1.71 1.18-2.916a4.722 4.722 0 00-.07-.806H3.964v1.526h2.14a1.835 1.835 0 01-.79 1.205c-.356.241-.814.379-1.35.379-1.034 0-1.911-.697-2.225-1.636a2.375 2.375 0 010-1.517c.314-.94 1.191-1.636 2.225-1.636a2.152 2.152 0 011.52.594l1.132-1.13a3.808 3.808 0 00-2.652-1.033z" style="fill:#4285F4"/><path d="M10.464 7.785v6.9h.886V11.89h1.465c.603 0 1.11-.196 1.522-.588a1.911 1.911 0 00.635-1.464 1.92 1.92 0 00-.635-1.456 2.125 2.125 0 00-1.522-.598zm2.427.85a1.156 1.156 0 01.823.365 1.176 1.176 0 010 1.686 1.171 1.171 0 01-.877.357H11.35V8.635h1.487a1.156 1.156 0 01.054 0zm4.124 1.175c-.842 0-1.477.308-1.907.925l.781.491c.288-.417.68-.626 1.175-.626a1.255 1.255 0 01.856.323 1.009 1.009 0 01.366.785v.202c-.34-.193-.774-.289-1.3-.289-.617 0-1.11.145-1.479.434-.37.288-.554.677-.554 1.165a1.476 1.476 0 00.525 1.156c.35.308.785.463 1.305.463.61 0 1.098-.27 1.465-.81h.038v.655h.848v-2.909c0-.61-.19-1.09-.568-1.44-.38-.35-.896-.525-1.551-.525zm2.263.154l1.946 4.422-1.098 2.38h.915L24 9.963h-.965l-1.368 3.391h-.02l-1.406-3.39zm-2.146 2.368c.494 0 .88.11 1.156.33 0 .372-.147.696-.44.973a1.413 1.413 0 01-.997.414 1.081 1.081 0 01-.69-.232.708.708 0 01-.293-.578c0-.257.12-.47.363-.647.24-.173.54-.26.9-.26Z"/></svg>
+      </div>
+      <div class="pay-card" aria-label="Mercado Pago" style="background:#00b1ea;border-color:#00b1ea;">
+        <span style="color:#fff;font-size:8px;font-weight:800;text-align:center;line-height:1.1;">MERCADO<br>PAGO</span>
+      </div>
+      <div class="pay-card" aria-label="OXXO" style="background:#e3001b;border-color:#e3001b;">
+        <span style="color:#fff;font-size:11px;font-weight:800;letter-spacing:.02em;">OXXO</span>
+      </div>
+    </div>
+    <div class="payment-note">Aceptamos estos métodos de pago. Tu información de pago está cifrada y nunca se comparte.</div>
+  </div>
+
+  <!-- Reviews -->
+  <div class="section" id="reviewsSection">
+    <div class="section-label" style="margin-bottom:16px;">Valoraciones de clientes</div>
+    <div class="reviews-summary">
+      <div class="reviews-score-block">
+        <div class="reviews-score">4.8</div>
+        <div class="reviews-stars">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+        </div>
+        <div class="reviews-count">327 valoraciones</div>
+      </div>
+      <div class="rating-bars">
+        <div class="rating-bar-row"><span>95</span><div class="rating-bar-track"><div class="rating-bar-fill" style="width:82%"></div></div></div>
+        <div class="rating-bar-row"><span>38</span><div class="rating-bar-track"><div class="rating-bar-fill" style="width:12%"></div></div></div>
+        <div class="rating-bar-row"><span>19</span><div class="rating-bar-track"><div class="rating-bar-fill" style="width:4%"></div></div></div>
+        <div class="rating-bar-row"><span>14</span><div class="rating-bar-track"><div class="rating-bar-fill" style="width:1%"></div></div></div>
+        <div class="rating-bar-row"><span>5</span><div class="rating-bar-track"><div class="rating-bar-fill" style="width:1%"></div></div></div>
+      </div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-header">
+        <div class="review-avatar">M</div>
+        <div class="review-meta">
+          <div class="review-name">M**** R.</div>
+          <div class="review-date">12 sept 2026 · Color: Negro</div>
+        </div>
+      </div>
+      <div class="review-stars-row">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+      </div>
+      <p class="review-text">¡valió totalmente la pena! 👏⚡</p>
+      <div class="review-photos">
+        <div class="review-photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9.5" r="1.5"/><path d="M21 15l-5-5-4 4-2-2-6 6"/></svg><img src="images/reviews/review-1-1.jpg" alt="Foto de la reseña de M**** R." onerror="tryNextExt(this)"></div>
+      </div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-header">
+        <div class="review-avatar">J</div>
+        <div class="review-meta">
+          <div class="review-name">J**** P.</div>
+          <div class="review-date">3 sept 2026 · Color: Negro</div>
+        </div>
+      </div>
+      <div class="review-stars-row">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+      </div>
+      <p class="review-text">¡Llegó súper rápido, igualito al anuncio y funcionando perfecto, me encantó!</p>
+      <div class="review-photos">
+        <div class="review-photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9.5" r="1.5"/><path d="M21 15l-5-5-4 4-2-2-6 6"/></svg><img src="images/reviews/review-2-1.jpg" alt="Foto de la reseña de J**** P." onerror="tryNextExt(this)"></div>
+      </div>
+    </div>
+
+    <div class="more-reviews" id="moreReviews">
+      <div class="review-card">
+        <div class="review-header">
+          <div class="review-avatar">C</div>
+          <div class="review-meta">
+            <div class="review-name">C**** L.</div>
+            <div class="review-date">28 ago 2026 · Color: Negro</div>
+          </div>
+        </div>
+        <div class="review-stars-row">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="review-text">Llegó al toque, súper bien empaquetado y va fino fino, 100% recomendado</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-header">
+          <div class="review-avatar">A</div>
+          <div class="review-meta">
+            <div class="review-name">A**** G.</div>
+            <div class="review-date">20 ago 2026 · Color: Negro</div>
+          </div>
+        </div>
+        <div class="review-stars-row">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="review-text">embalaje impecable y tira que da gusto, ¡compraza!</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-header">
+          <div class="review-avatar">P</div>
+          <div class="review-meta">
+            <div class="review-name">P**** M.</div>
+            <div class="review-date">15 ago 2026 · Color: Negro</div>
+          </div>
+        </div>
+        <div class="review-stars-row">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="review-text">¡un 10 de 10!</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-header">
+          <div class="review-avatar">L</div>
+          <div class="review-meta">
+            <div class="review-name">L**** F.</div>
+            <div class="review-date">9 ago 2026 · Color: Negro</div>
+          </div>
+        </div>
+        <div class="review-stars-row">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="review-text">¡Buenísimo! Llegó enseguida, súper fácil de armar y va volando, 100% recomendado</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-header">
+          <div class="review-avatar">S</div>
+          <div class="review-meta">
+            <div class="review-name">S**** V.</div>
+            <div class="review-date">2 ago 2026 · Color: Negro</div>
+          </div>
+        </div>
+        <div class="review-stars-row">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="review-text">¡De lujo! Llegó súper rápido, impecable y tira increíble, ¡compra perfecta!</p>
+      </div>
+    </div>
+
+    <button class="reviews-more-btn" id="reviewsMoreBtn">Ver todas las valoraciones</button>
+  </div>
+
+  <!-- Description -->
+  <div class="section" id="descSection">
+    <div class="desc-heading">Sobre este producto</div>
+    <div class="desc-subheading">Descripción</div>
+    <p class="desc-text"><span class="desc-title-strong">Apple iPhone 18 Pro Max 256GB</span><br><br>
+      <span>Mucho Pro. iPhone 18 Pro y Pro Max. Cámara Fusion de 48 Mpx con apertura variable. Mejores fotos y vídeos con poca luz. Una profundidad de campo impresionante.</span>
+    </p>
+    <ul class="feature-list">
+      <li><b>Sistema Operativo</b> iOS</li>
+      <li><b>Procesador</b> Chip A20 Pro</li>
+      <li><b>Capacidad memoria</b> 256 GB</li>
+      <li><b>Asistente de inteligencia artificial integrado</b>: Apple Intelligence</li>
+      <li><b>Tamaño pantalla </b> 	17.5 cm</li>
+    </ul>
+    <div class="more-content" id="moreContent">
+      <p class="desc-text">
+        Capacidades de Machine learning, Escritura y texto predictivo, Biométricas, Asistente virtual, Procesador IA, Reconocimiento de voz, Mejoras en la cámara con IA, Gestión inteligente de la batería
+      </p>
+    </div>
+    <button class="view-more-btn" id="viewMoreBtn" onclick="toggleMore()">
+      <span id="viewMoreText">Ver más</span>
+      <svg id="viewMoreIcon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+
+    <div class="accordion">
+      <div class="accordion-item">
+        <button class="accordion-head" onclick="toggleAccordion(this)">
+          <span>Detalles</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+   <div class="accordion-body">
+  <b>Marca:</b> Apple &nbsp;·&nbsp; <b>Modelo:</b> iPhone 18 Pro Max<br>
+  <b>Chip:</b> A20 Pro (2 nm) &nbsp;·&nbsp; <b>CPU:</b> 6 núcleos (2 de alto rendimento + 4 de eficiência)<br>
+  <b>GPU:</b> 7 núcleos com acelerador neural &nbsp;·&nbsp; <b>Motor Neural:</b> Duplo de 16 núcleos (32 no total)<br>
+  <b>Ecrã:</b> 6,9" Super Retina XDR OLED &nbsp;·&nbsp; <b>Resolução:</b> 2868 x 1320 píxeis a 460 ppi<br>
+  <b>Taxa de atualização:</b> ProMotion adaptativo até 120 Hz &nbsp;·&nbsp; <b>Brilho:</b> até 3000 nits (exterior)<br>
+  <b>Câmara principal:</b> Fusion de 48 MP com abertura variável (ƒ/1.48, ƒ/1.8, ƒ/2.8, ƒ/4.0)<br>
+  <b>Outras câmaras:</b> Ultra grande angular de 48 MP &nbsp;·&nbsp; Teleobjetiva de 48 MP (4x/8x)<br>
+  <b>Autonomia:</b> até 43 h de reprodução de vídeo &nbsp;·&nbsp; <b>Carga rápida:</b> 50 % em 15 min (com fio)<br>
+  <b>Conectividade:</b> Wi-Fi 7 &nbsp;·&nbsp; Bluetooth 6 &nbsp;·&nbsp; 5G &nbsp;·&nbsp; Chip N1 &nbsp;·&nbsp; <b>SIM:</b> eSIM (em modelos compatíveis)<br>
+  <b>Resistência:</b> IP68 (até 6 m durante 30 min) &nbsp;·&nbsp; <b>Peso:</b> 249 g<br>
+  <b>Armazenamento:</b> 256 GB / 512 GB / 1 TB / 2 TB &nbsp;·&nbsp; <b>Cores:</b> Preto, Prateado, Azul Glaciar, Vinho Borgonha
+</div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-head" onclick="toggleAccordion(this)">
+          <span>Seguridad y conformidad</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="accordion-body">
+          	Cámara principal Fusion de 48 Mpx con apertura variable (ƒ/1,48, ƒ/1,8, ƒ/2,8 y ƒ/4) y teleobjetivo x2 de 12 Mpx 48 mm + Ultra gran angular Fusion de 48 Mpx: 13 mm, apertura de ƒ/2,2, campo de visión de 120° y teleobjetivo x8 de 12 Mpx 200 mm ƒ/2,8. Zoom óptico de acercamiento x8, de alejamiento x2, rango x16 y zoom digital hasta x40. Flash True Tone adaptativo. HDR Inteligente 5. Grabación de vídeo en 4K con Dolby Vision a 24, 25, 30, 60, 100 o 120 f/s.
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">Volver arriba</button>
+
+<div class="bottom-bar">
+  <div class="bottom-bar-inner">
+    <button class="bb-icon" id="bookmarkBtn2" aria-label="Guardar">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg>
+    </button>
+    <button class="bb-btn cart" id="addToCartBtn">Añadir al carrito</button>
+    <!-- Checkout link: don't edit this href by hand — it's overwritten on load from
+         CHECKOUT_URL near the top of the <script> at the bottom of this file. -->
+    <a class="bb-btn checkout" id="mainCheckoutBtn" href="https://pay.hotmart.com/Q107611061L?off=thpjpj6o" target="_blank" rel="noopener noreferrer">Finalizar compra</a>
+  </div>
+</div>
+
+<div class="toast" id="toast">Añadido al carrito</div>
+
+<!-- Live sales notification (filled in by the "Live sales notifications" script) -->
+<div class="sales-notif" id="salesNotif" role="status" aria-live="polite">
+  <div class="sales-thumb">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+    <img src="images/products/1.jpg" alt="" onerror="tryNextExt(this)">
+  </div>
+  <div class="sales-body">
+    <div class="sales-line1" id="salesName"></div>
+    <div class="sales-line2" id="salesAction"></div>
+    <div class="sales-line3">
+      <span id="salesIcon"></span>
+      <span class="sales-time" id="salesTime"></span>
+      <span class="sales-verified">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+        <span>Compra verificada</span>
+      </span>
+    </div>
+  </div>
+  <div class="sales-bar" id="salesBar"></div>
+</div>
+
+<script>
+  // Try alternate image extensions before falling back to the placeholder icon.
+  // This way it doesn't matter if a replaced photo was saved as .jpg, .jpeg, .png or .webp.
+  function tryNextExt(img){
+    var exts = ['jpg', 'jpeg', 'png', 'webp'];
+    var match = img.getAttribute('src').match(/^(.*)\.(jpg|jpeg|png|webp)$/i);
+    if (!match) { img.remove(); return; }
+    var base = match[1];
+    var nextIndex = exts.indexOf(match[2].toLowerCase()) + 1;
+    if (nextIndex < exts.length) {
+      img.src = base + '.' + exts[nextIndex];
+    } else {
+      img.remove();
+    }
+  }
+
+  // =====================================================================
+  // CHECKOUT LINK(S) — EDIT HERE
+  // CHECKOUT_URL is the single source of truth for every "Finalizar compra"
+  // button on the page (bottom bar + mini cart). Change the URL below and
+  // it updates everywhere automatically — don't edit the href attributes
+  // in the HTML directly, they get overwritten from this constant on load.
+  //
+  // If you later get separate Hotmart offers per quantity (2x, 3x bundles),
+  // fill them into QTY_CHECKOUT_LINKS further down instead of here.
+  // =====================================================================
+  var CHECKOUT_URL = 'https://pay.hotmart.com/Q107611061L?off=thpjpj6o';
+  document.getElementById('mainCheckoutBtn').setAttribute('href', CHECKOUT_URL);
+  document.getElementById('cartCheckoutBtn').setAttribute('href', CHECKOUT_URL);
+
+  // ---------- Mini cart ----------
+  var unitPrice = 5310.00; // kept in sync with #priceCurrent (the roulette discount updates this too)
+  var cartQty = 0;
+  var MAX_QTY = 3; // stock cap — trying to go past this shows the "only 3 available" message
+  var cartBadge = document.getElementById('cartBadge');
+  var cartOverlay = document.getElementById('cartOverlay');
+  var cartQtyValue = document.getElementById('cartQtyValue');
+  var cartItemPrice = document.getElementById('cartItemPrice');
+  var cartTotal = document.getElementById('cartTotal');
+  var cartCheckoutBtn = document.getElementById('cartCheckoutBtn');
+
+  // EDIT HERE to give each quantity its own bundle price. Leave a tier as
+  // `null` to just multiply unitPrice by that quantity (today's default).
+  // Example: QTY_PRICES = { 1: null, 2: 9500.00, 3: 13500.00 };
+  var QTY_PRICES = {
+    1: null,
+    2: null,
+    3: null
+  };
+
+  // EDIT HERE once you have separate checkout offers per quantity — for now
+  // every tier reuses CHECKOUT_URL on purpose.
+  var QTY_CHECKOUT_LINKS = {
+    1: 'https://pay.hotmart.com/Q107611061L?off=thpjpj6o',
+    2: 'https://pay.hotmart.com/Q107611061L?off=yy8lq46o',
+    3: 'https://pay.hotmart.com/Q107611061L?off=3vvfx6lx'
+  };
+
+  function formatMoney(n){
+    var parts = n.toFixed(2).split('.');
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    return '€' + parts.join('.');
+  }
+  function cartTotalFor(qty){
+    var override = QTY_PRICES[qty];
+    return (override != null) ? override : unitPrice * qty;
+  }
+  function renderCart(){
+    var qty = Math.max(cartQty, 1);
+    cartItemPrice.textContent = formatMoney(unitPrice);
+    cartTotal.textContent = formatMoney(cartTotalFor(qty));
+    cartQtyValue.textContent = qty;
+    cartCheckoutBtn.setAttribute('href', QTY_CHECKOUT_LINKS[qty] || BASE_CHECKOUT_URL);
+    if (cartQty > 0) {
+      cartBadge.textContent = cartQty;
+      cartBadge.classList.add('show');
+    } else {
+      cartBadge.classList.remove('show');
+    }
+  }
+  function openCart(){
+    renderCart();
+    cartOverlay.classList.add('show');
+  }
+  function closeCart(){
+    cartOverlay.classList.remove('show');
+  }
+  document.getElementById('cartCloseBtn').addEventListener('click', closeCart);
+  document.getElementById('cartContinueBtn').addEventListener('click', closeCart);
+  cartOverlay.addEventListener('click', function(e){
+    if (e.target === cartOverlay) closeCart();
+  });
+  document.getElementById('cartQtyPlus').addEventListener('click', function(){
+    if (cartQty >= MAX_QTY) {
+      showToast('Solo hay ' + MAX_QTY + ' unidades disponibles');
+      return;
+    }
+    cartQty++;
+    renderCart();
+  });
+  document.getElementById('cartQtyMinus').addEventListener('click', function(){
+    if (cartQty > 1) {
+      cartQty--;
+      renderCart();
+    }
+  });
+  document.getElementById('cartRemoveBtn').addEventListener('click', function(){
+    cartQty = 0;
+    renderCart();
+    closeCart();
+  });
+
+  // Gallery dots + slides
+  var totalSlides = 2;
+  var currentSlide = 0;
+  var dotsEl = document.getElementById('dots');
+  var slideEls = document.querySelectorAll('.gallery-slide');
+  for (var i = 0; i < totalSlides; i++) {
+    var d = document.createElement('div');
+    d.className = 'dot' + (i === 0 ? ' active' : '');
+    dotsEl.appendChild(d);
+  }
+  function renderDots(){
+    var dots = dotsEl.querySelectorAll('.dot');
+    dots.forEach(function(dot, idx){
+      dot.classList.toggle('active', idx === currentSlide);
+    });
+    slideEls.forEach(function(slide, idx){
+      slide.classList.toggle('active', idx === currentSlide);
+    });
+  }
+  function moveDot(dir){
+    currentSlide = (currentSlide + dir + totalSlides) % totalSlides;
+    renderDots();
+  }
+
+  // Color swatches
+  var swatches = document.querySelectorAll('.swatch');
+  var colorLabel = document.getElementById('colorLabel');
+  swatches.forEach(function(sw){
+    sw.addEventListener('click', function(){
+      swatches.forEach(function(s){ s.classList.remove('selected'); });
+      sw.classList.add('selected');
+      colorLabel.textContent = sw.getAttribute('data-color');
+    });
+  });
+
+  // Ver más
+  function toggleMore(){
+    var content = document.getElementById('moreContent');
+    var text = document.getElementById('viewMoreText');
+    var icon = document.getElementById('viewMoreIcon');
+    var open = content.classList.toggle('open');
+    text.textContent = open ? 'Ver menos' : 'Ver más';
+    icon.style.transform = open ? 'rotate(180deg)' : 'rotate(0deg)';
+  }
+
+  // Accordion
+  function toggleAccordion(btn){
+    var item = btn.parentElement;
+    item.classList.toggle('open');
+  }
+
+  // Back to top button (show while inside description section)
+  var descSection = document.getElementById('descSection');
+  var backToTop = document.getElementById('backToTop');
+  window.addEventListener('scroll', function(){
+    var rect = descSection.getBoundingClientRect();
+    var shouldShow = rect.top < 200 && window.scrollY > 400;
+    backToTop.classList.toggle('show', shouldShow);
+  });
+
+  // Add to cart toast
+  var toast = document.getElementById('toast');
+  function showToast(msg){
+    toast.textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(window._toastTimer);
+    window._toastTimer = setTimeout(function(){ toast.classList.remove('show'); }, 1800);
+  }
+  document.getElementById('addToCartBtn').addEventListener('click', function(){
+    if (cartQty >= MAX_QTY) {
+      showToast('Solo hay ' + MAX_QTY + ' unidades disponibles');
+      return;
+    }
+    cartQty++;
+    renderCart();
+    showToast('Añadido al carrito');
+  });
+  document.getElementById('cartTopBtn').addEventListener('click', function(){
+    if (cartQty > 0) {
+      openCart();
+    } else {
+      showToast('Tu carrito está vacío');
+    }
+  });
+  var reviewsMoreBtn = document.getElementById('reviewsMoreBtn');
+  var moreReviews = document.getElementById('moreReviews');
+  reviewsMoreBtn.addEventListener('click', function(){
+    moreReviews.classList.add('open');
+    reviewsMoreBtn.remove();
+    showToast('Mostrando todas las valoraciones');
+  });
+
+  // Bookmark toggle (top + bottom icon stay in sync)
+  var bookmarked = false;
+  var bookmarkBtns = [document.getElementById('bookmarkBtn'), document.getElementById('bookmarkBtn2')];
+  bookmarkBtns.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      bookmarked = !bookmarked;
+      bookmarkBtns.forEach(function(b){
+        b.querySelector('svg').setAttribute('fill', bookmarked ? 'currentColor' : 'none');
+        b.style.color = bookmarked ? '#fe2c55' : '#111111';
+      });
+      showToast(bookmarked ? 'Guardado' : 'Eliminado de guardados');
+    });
+  });
+
+  // Discount roulette
+  (function(){
+    var overlay = document.getElementById('rouletteOverlay');
+    var wheel = document.getElementById('wheel');
+    var hub = document.getElementById('wheelHub');
+    var closeBtn = document.getElementById('rouletteClose');
+    var message = document.getElementById('rouletteMessage');
+    var cta = document.getElementById('rouletteCta');
+    var attemptDots = document.querySelectorAll('#rouletteAttempts .attempt-dot');
+
+    document.body.classList.add('roulette-locked');
+
+    var spinCount = 0;
+    var currentRotation = 0;
+    var spinning = false;
+    var MOD_PLUS_ONE = 225;
+    var MOD_NINETY = 135;
+
+    function markAttempt(n){
+      attemptDots.forEach(function(dot, idx){
+        dot.classList.toggle('used', idx < n);
+      });
+    }
+
+    function spin(){
+      if (spinning || spinCount >= 3) return;
+      spinning = true;
+      spinCount++;
+      message.textContent = '';
+      message.className = 'roulette-message';
+      markAttempt(spinCount);
+
+      var desiredMod = spinCount < 3 ? MOD_PLUS_ONE : MOD_NINETY;
+      var baseExtra = 1440 + Math.floor(Math.random() * 360);
+      var afterExtraMod = (currentRotation + baseExtra) % 360;
+      var delta = (desiredMod - afterExtraMod + 360) % 360;
+      currentRotation = currentRotation + baseExtra + delta;
+      wheel.style.transform = 'rotate(' + currentRotation + 'deg)';
+      hub.disabled = true;
+
+      setTimeout(function(){
+        spinning = false;
+        if (spinCount < 3) {
+          message.textContent = 'Has ganado 1 oportunidad extra. Gira de nuevo.';
+          message.className = 'roulette-message bonus';
+          hub.disabled = false;
+        } else {
+          message.textContent = 'Enhorabuena. Ganaste un 99% de descuento.';
+          message.className = 'roulette-message win';
+          hub.style.display = 'none';
+          cta.classList.add('show');
+          spawnConfetti();
+        }
+      }, 3300);
+    }
+
+    function spawnConfetti(){
+      var layer = document.getElementById('confettiLayer');
+      var colors = ['#fe2c55', '#111111', '#ffffff', '#00b578'];
+      var count = 70;
+      for (var i = 0; i < count; i++) {
+        var el = document.createElement('div');
+        el.className = 'confetti-piece';
+        var size = 6 + Math.random() * 5;
+        var wide = Math.random() > 0.5;
+        el.style.width = (wide ? size * 1.6 : size) + 'px';
+        el.style.height = (wide ? size : size * 1.6) + 'px';
+        el.style.left = (Math.random() * 100) + '%';
+        el.style.background = colors[Math.floor(Math.random() * colors.length)];
+        el.style.setProperty('--drift', (Math.random() * 160 - 80) + 'px');
+        el.style.setProperty('--fall', (window.innerHeight * (0.6 + Math.random() * 0.5)) + 'px');
+        el.style.setProperty('--rot', (360 + Math.random() * 360) + 'deg');
+        el.style.animationDuration = (2000 + Math.random() * 1200) + 'ms';
+        el.style.animationDelay = (Math.random() * 450) + 'ms';
+        layer.appendChild(el);
+        el.addEventListener('animationend', function(){ this.remove(); });
+      }
+    }
+
+    function closeRoulette(){
+      overlay.classList.remove('show');
+      document.body.classList.remove('roulette-locked');
+    }
+
+    function applyDiscount(){
+      var priceCurrent = document.getElementById('priceCurrent');
+      var priceDiscount = document.getElementById('priceDiscount');
+      var discountBanner = document.getElementById('discountBanner');
+      priceCurrent.innerHTML = '€16<sup>.19</sup>';
+      priceDiscount.textContent = '-99%';
+      discountBanner.classList.add('show');
+      unitPrice = 16.19;
+      renderCart();
+    }
+
+    hub.addEventListener('click', spin);
+    // The close (X) button is intentionally decorative — closing without
+    // spinning isn't allowed, so no click handler is wired up here.
+    cta.addEventListener('click', function(){
+      applyDiscount();
+      closeRoulette();
+      showToast('Descuento del 99% aplicado');
+    });
+  })();
+
+  // ---------- Live sales notifications ----------
+  // =====================================================================
+  // SALES NOTIFICATIONS — EDIT HERE
+  // Replace "Exemplo" with the real customers' names. For each entry:
+  //   name    -> customer name shown in bold
+  //   city    -> optional (e.g. 'Monterrey'); leave '' to hide it
+  //   minutes -> 0 = "buying right now", 5 = "bought 5 minutes ago", etc.
+  // They rotate in random order (never the same one twice in a row).
+  // =====================================================================
+  var SALES_NOTIFICATIONS = [
+    { name: 'S*n*h*r J*o*s*r', city: '', minutes: 0 },
+    { name: 'M*r*a G*u*e*e', city: '', minutes: 5 },
+    { name: 'P*i*l*p*e S*a*a*', city: '', minutes: 2 },
+    { name: 'M*k* B*o*l*r', city: '', minutes: 1 },
+    { name: 'A*m*n*o R*s*s*r', city: '', minutes: 0 },
+    { name: 'G*s*t*v* M*r*y*', city: '', minutes: 4 }
+  ];
+  var SALES_FIRST_DELAY = 6000;   // wait after the roulette closes before the first one
+  var SALES_VISIBLE_MS  = 5000;   // how long each notification stays on screen
+  var SALES_GAP_MIN_MS  = 9000;   // random pause between notifications (min)
+  var SALES_GAP_MAX_MS  = 17000;  // ... and (max)
+
+  (function(){
+    if (!SALES_NOTIFICATIONS.length) return;
+    var notif = document.getElementById('salesNotif');
+    var nameEl = document.getElementById('salesName');
+    var actionEl = document.getElementById('salesAction');
+    var timeEl = document.getElementById('salesTime');
+    var iconEl = document.getElementById('salesIcon');
+    var lastIdx = -1;
+
+    var CLOCK_ICON = '<svg class="sales-clock" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>';
+
+    function timeLabel(minutes){
+      if (minutes <= 0) return 'Ahora mismo';
+      if (minutes === 1) return 'hace 1 minuto';
+      return 'hace ' + minutes + ' minutos';
+    }
+    function pick(){
+      var i;
+      do { i = Math.floor(Math.random() * SALES_NOTIFICATIONS.length); }
+      while (SALES_NOTIFICATIONS.length > 1 && i === lastIdx);
+      lastIdx = i;
+      return SALES_NOTIFICATIONS[i];
+    }
+    function canShow(){
+      return !document.body.classList.contains('roulette-locked') &&
+             !document.getElementById('cartOverlay').classList.contains('show') &&
+             !document.hidden;
+    }
+    function fill(item){
+      var live = item.minutes <= 0;
+      nameEl.innerHTML = '';
+      var strong = document.createElement('strong');
+      strong.textContent = item.name;
+      nameEl.appendChild(strong);
+      if (item.city) {
+        var city = document.createElement('span');
+        city.textContent = ' · ' + item.city;
+        nameEl.appendChild(city);
+      }
+      actionEl.textContent = live ? 'está comprando este iphone' : 'compró este iphone';
+      timeEl.textContent = timeLabel(item.minutes);
+      timeEl.className = 'sales-time' + (live ? ' live' : '');
+      iconEl.innerHTML = live ? '<span class="sales-live"></span>' : CLOCK_ICON;
+    }
+    function scheduleNext(){
+      var gap = SALES_GAP_MIN_MS + Math.random() * (SALES_GAP_MAX_MS - SALES_GAP_MIN_MS);
+      setTimeout(show, gap);
+    }
+    function show(){
+      if (!canShow()) { setTimeout(show, 2000); return; }
+      fill(pick());
+      notif.style.setProperty('--dur', SALES_VISIBLE_MS + 'ms');
+      notif.classList.add('show');
+      setTimeout(function(){
+        notif.classList.remove('show');
+        scheduleNext();
+      }, SALES_VISIBLE_MS);
+    }
+    function waitForRoulette(){
+      if (document.body.classList.contains('roulette-locked')) {
+        setTimeout(waitForRoulette, 500);
+      } else {
+        setTimeout(show, SALES_FIRST_DELAY);
+      }
+    }
+    waitForRoulette();
+  })();
+</script>
+</body>
+</html>
