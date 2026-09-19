@@ -608,7 +608,7 @@
               <span style="transform:rotate(-135deg)" data-i18n="wheelPlusOne">+1 GIRO</span>
             </div>
             <div class="wheel-label prize on-white" style="transform:rotate(225deg) translate(0,-66px)">
-              <span style="transform:rotate(-225deg)">90% OFF</span>
+              <span style="transform:rotate(-225deg)">99% OFF</span>
             </div>
             <div class="wheel-label plain on-pink" style="transform:rotate(315deg) translate(0,-68px)">
               <span style="transform:rotate(-315deg)">35% OFF</span>
@@ -1177,7 +1177,7 @@
       toastAdded: 'Zum Warenkorb hinzugefügt', toastCartEmpty: 'Dein Warenkorb ist leer',
       toastShowingReviews: 'Alle Bewertungen werden angezeigt',
       toastSaved: 'Gespeichert', toastRemoved: 'Aus Favoriten entfernt',
-      toastDiscountApplied: '90% Rabatt angewendet',
+      toastDiscountApplied: '99% Rabatt angewendet',
       toastMaxQty: 'Es sind nur 3 Einheiten verfügbar',
       notifVerified: 'Verifizierter Kauf',
       notifBuying: 'kauft gerade diesen Roller', notifBought: 'hat diesen Roller gekauft',
@@ -1188,7 +1188,7 @@
       ariaCloseRoulette: 'Schließen', ariaSpin: 'Glücksrad drehen', hubText: 'Drehen',
       rouletteSubtitle: 'Du hast 3 Versuche. Viel Glück!',
       msgBonus: 'Du hast eine Extra-Chance gewonnen. Dreh noch einmal.',
-      msgWin: 'Glückwunsch! Du hast 90% Rabatt gewonnen.',
+      msgWin: 'Glückwunsch! Du hast 99% Rabatt gewonnen.',
       rouletteCta: 'Rabatt anwenden und Roller ansehen'
     }
   };
@@ -1514,7 +1514,7 @@
           message.className = 'roulette-message bonus';
           hub.disabled = false;
         } else {
-          message.textContent = T('msgWin', 'Enhorabuena. Ganaste un 90% de descuento.');
+          message.textContent = T('msgWin', 'Enhorabuena. Ganaste un 99% de descuento.');
           message.className = 'roulette-message win';
           hub.style.display = 'none';
           cta.classList.add('show');
@@ -1556,9 +1556,9 @@
       var priceDiscount = document.getElementById('priceDiscount');
       var discountBanner = document.getElementById('discountBanner');
       priceCurrent.innerHTML = '29<sup>,90 €</sup>';
-      priceDiscount.textContent = '-90%';
+      priceDiscount.textContent = '-99%';
       discountBanner.classList.add('show');
-      unitPrice = 29.90;
+      unitPrice = 9.90;
       renderCart();
     }
 
@@ -1568,7 +1568,7 @@
     cta.addEventListener('click', function(){
       applyDiscount();
       closeRoulette();
-      showToast(T('toastDiscountApplied', 'Descuento del 90% aplicado'));
+      showToast(T('toastDiscountApplied', 'Descuento del 99% aplicado'));
     });
   })();
 
