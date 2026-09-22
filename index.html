@@ -23,7 +23,7 @@
     --teal:#00b578;
     --pink:#fe2c55;
     --pink-dark:#e0264a;
-    --pill-gray:#f0f0f0;F
+    --pill-gray:#f0f0f0;
   }
   *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
   html,body{
@@ -594,7 +594,7 @@
   <div class="confetti-layer" id="confettiLayer"></div>
 
   <div class="roulette-content">
-    <div class="roulette-pill">Oferta exclusiva</div>
+    <div class="roulette-pill" data-i18n="roulette_pill">Oferta exclusiva</div>
 
     <div class="wheel-wrap">
       <div class="wheel-pointer"></div>
@@ -602,20 +602,20 @@
         <div class="wheel" id="wheel">
           <div class="wheel-seg-labels">
             <div class="wheel-label plain on-white" style="transform:rotate(45deg) translate(0,-68px)">
-              <span style="transform:rotate(-45deg)">5% OFF</span>
+              <span style="transform:rotate(-45deg)" data-i18n="wheel_5off">5% OFF</span>
             </div>
             <div class="wheel-label plain on-pink" style="transform:rotate(135deg) translate(0,-68px)">
-              <span style="transform:rotate(-135deg)">+1 GIRO</span>
+              <span style="transform:rotate(-135deg)" data-i18n="wheel_1spin">+1 GIRO</span>
             </div>
             <div class="wheel-label prize on-white" style="transform:rotate(225deg) translate(0,-66px)">
-              <span style="transform:rotate(-225deg)">99%% OFF</span>
+              <span style="transform:rotate(-225deg)" data-i18n="wheel_99off">99%% OFF</span>
             </div>
             <div class="wheel-label plain on-pink" style="transform:rotate(315deg) translate(0,-68px)">
-              <span style="transform:rotate(-315deg)">15% OFF</span>
+              <span style="transform:rotate(-315deg)" data-i18n="wheel_15off">15% OFF</span>
             </div>
           </div>
         </div>
-        <button class="wheel-hub" id="wheelHub" aria-label="Girar ruleta">Girar</button>
+        <button class="wheel-hub" id="wheelHub" aria-label="Girar ruleta" data-i18n="wheel_spin">Girar</button>
       </div>
     </div>
 
@@ -625,9 +625,9 @@
       <div class="attempt-dot"></div>
     </div>
 
-    <div class="roulette-subtitle" id="rouletteSubtitle">Tienes 3 intentos. ¡Buena suerte!</div>
+    <div class="roulette-subtitle" id="rouletteSubtitle" data-i18n="roulette_subtitle">Tienes 3 intentos. ¡Buena suerte!</div>
     <div class="roulette-message" id="rouletteMessage"></div>
-    <button class="roulette-cta" id="rouletteCta">Aplicar descuento y ver el iphone</button>
+    <button class="roulette-cta" id="rouletteCta" data-i18n="roulette_cta">Aplicar descuento y ver el iphone</button>
   </div>
 </div>
 
@@ -635,7 +635,7 @@
 <div class="cart-overlay" id="cartOverlay">
   <div class="cart-sheet">
     <div class="cart-head">
-      <h3>Tu carrito</h3>
+      <h3 data-i18n="cart_title">Tu carrito</h3>
       <button class="cart-close" id="cartCloseBtn" aria-label="Cerrar">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
       </button>
@@ -645,9 +645,9 @@
         <img src="images/products/1.jpg" alt="Patinete eléctrico" onerror="tryNextExt(this)">
       </div>
       <div class="cart-item-info">
-        <div class="cart-item-title">Apple iPhone 18 Pro Max 256GB</div>
+        <div class="cart-item-title" data-i18n="cart_item_title">Apple iPhone 18 Pro Max 256GB</div>
         <div class="cart-item-price" id="cartItemPrice">€1.619,99</div>
-        <button class="cart-remove" id="cartRemoveBtn">Quitar</button>
+        <button class="cart-remove" id="cartRemoveBtn" data-i18n="cart_remove">Quitar</button>
       </div>
       <div class="cart-qty">
         <button id="cartQtyMinus" aria-label="Quitar uno">−</button>
@@ -656,13 +656,13 @@
       </div>
     </div>
     <div class="cart-total-row">
-      <span>Total</span>
+      <span data-i18n="cart_total">Total</span>
       <span id="cartTotal">€1.619,00</span>
     </div>
     <!-- Checkout link: don't edit this href by hand — it's overwritten on load from
          CHECKOUT_URL near the top of the <script> at the bottom of this file. -->
-    <a class="cart-checkout-btn" id="cartCheckoutBtn" href="https://pay.hotmart.com/W107685846P?off=smd14kdc" target="_blank" rel="noopener noreferrer">Finalizar compra</a>
-    <button class="cart-continue-btn" id="cartContinueBtn">Seguir comprando</button>
+    <a class="cart-checkout-btn" id="cartCheckoutBtn" href="https://pay.hotmart.com/W107685846P?off=smd14kdc" target="_blank" rel="noopener noreferrer" data-i18n="cart_checkout">Finalizar compra</a>
+    <button class="cart-continue-btn" id="cartContinueBtn" data-i18n="cart_continue">Seguir comprando</button>
   </div>
 </div>
 
@@ -703,14 +703,14 @@
       <div class="gallery-slide active" data-index="0">
         <div class="gallery-placeholder">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9.5" r="1.5"/><path d="M21 15l-5-5-4 4-2-2-6 6"/></svg>
-          <span>Imagen del producto próximamente</span>
+          <span data-i18n="gallery_placeholder">Imagen del producto próximamente</span>
         </div>
         <img src="images/products/1.jpg" alt="Patinete eléctrico - foto 1" onerror="tryNextExt(this)">
       </div>
       <div class="gallery-slide" data-index="1">
         <div class="gallery-placeholder">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9.5" r="1.5"/><path d="M21 15l-5-5-4 4-2-2-6 6"/></svg>
-          <span>Imagen del producto próximamente</span>
+          <span data-i18n="gallery_placeholder">Imagen del producto próximamente</span>
         </div>
         <img src="images/products/2.jpg" alt="Patinete eléctrico - foto 2" onerror="tryNextExt(this)">
       </div>
@@ -730,56 +730,56 @@
       <span class="price-old" id="priceOld">€1.619,00</span>
       <span class="price-discount" id="priceDiscount">-50%</span>
     </div>
-    <div class="price-vat">Impuestos incluidos</div>
+    <div class="price-vat" data-i18n="price_vat">Impuestos incluidos</div>
     <div class="shipping-line">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="7" width="15" height="11" rx="1"/><path d="M16 10h3l3 3v5h-6z"/><circle cx="6" cy="20" r="1.6"/><circle cx="17.5" cy="20" r="1.6"/></svg>
-      <span><b>Envío gratis</b> &nbsp;|&nbsp; Entrega en 48 horas</span>
+      <span><b data-i18n="ship_free">Envío gratis</b> &nbsp;|&nbsp; <span data-i18n="ship_delivery">Entrega en 48 horas</span></span>
     </div>
     <div class="free-shipping">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-      <span>Envío gratis a todo Europa</span>
+      <span data-i18n="ship_free_eu">Envío gratis a todo Europa</span>
     </div>
     <div class="discount-banner" id="discountBanner">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-      <span>Descuento de la ruleta aplicado a tu compra</span>
+      <span data-i18n="discount_applied">Descuento de la ruleta aplicado a tu compra</span>
     </div>
   </div>
 
   <!-- Title / seller -->
   <div class="title-block">
-    <div class="product-title">Apple iPhone 18 Pro Max, Burdeos, 256 GB, 6.9" OLED Super Retina XDR, 5G, Chip A20 Pro, Siri AI, iOS</div>
-    <div class="seller-row"><span>Vendido por</span> <a href="#">Tiktok Shop</a></div>
+    <div class="product-title" data-i18n="product_title">Apple iPhone 18 Pro Max, Burdeos, 256 GB, 6.9" OLED Super Retina XDR, 5G, Chip A20 Pro, Siri AI, iOS</div>
+    <div class="seller-row"><span data-i18n="seller_sold_by">Vendido por</span> <a href="#">Tiktok Shop</a></div>
     <div class="sold-count">
-      <span>574 vendidos</span>
+      <span data-i18n="sold_count">574 vendidos</span>
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg>
     </div>
     <div class="badge-row">
-      <span class="badge gray">Garantía de devolución 30 días</span>
-      <span class="badge teal">Cupón de 99% de descuento</span>
+      <span class="badge gray" data-i18n="badge_return">Garantía de devolución 30 días</span>
+      <span class="badge teal" data-i18n="badge_coupon">Cupón de 99% de descuento</span>
     </div>
   </div>
 
   <!-- Color -->
   <div class="section">
-    <div class="section-label"><span>Color:</span> <span id="colorLabel">Burdeos</span></div>
+    <div class="section-label"><span data-i18n="color_label">Color:</span> <span id="colorLabel" data-i18n="color_burgundy">Burdeos</span></div>
     <div class="swatches" id="swatches">
       <div class="swatch selected" data-color="Burdeos">
         <div class="swatch-color negro"></div>
-        <div class="swatch-label">Burdeos</div>
+        <div class="swatch-label" data-i18n="color_burgundy">Burdeos</div>
       </div>
     </div>
   </div>
 
   <!-- Shipping & returns -->
   <div class="section">
-    <div class="section-label" style="margin-bottom:2px;">Envío y devoluciones</div>
+    <div class="section-label" style="margin-bottom:2px;" data-i18n="ship_returns_title">Envío y devoluciones</div>
     <div class="info-row">
       <div class="info-icon">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="7" width="15" height="11" rx="1"/><path d="M16 10h3l3 3v5h-6z"/><circle cx="6" cy="20" r="1.6"/><circle cx="17.5" cy="20" r="1.6"/></svg>
       </div>
       <div class="info-body">
-        <div class="info-title">Entrega en 48 horas</div>
-        <div class="info-sub">Recíbelo en un plazo de <b>48 horas</b> tras la confirmación del pedido</div>
+        <div class="info-title" data-i18n="ship_48_title">Entrega en 48 horas</div>
+        <div class="info-sub"><span data-i18n="ship_48_sub_1">Recíbelo en un plazo de</span> <b data-i18n="ship_48_sub_b">48 horas</b> <span data-i18n="ship_48_sub_2">tras la confirmación del pedido</span></div>
       </div>
       <div class="chevron">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M9 6l6 6-6 6"/></svg>
@@ -790,8 +790,8 @@
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 11-3-6.7"/><path d="M21 3v6h-6"/></svg>
       </div>
       <div class="info-body">
-        <div class="info-title plain">Política de devolución</div>
-        <div class="info-sub">Devolución gratuita en 30 días. No se necesita etiqueta en la mayoría de los casos.</div>
+        <div class="info-title plain" data-i18n="return_title">Política de devolución</div>
+        <div class="info-sub" data-i18n="return_sub">Devolución gratuita en 30 días. No se necesita etiqueta en la mayoría de los casos.</div>
       </div>
       <div class="chevron">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M9 6l6 6-6 6"/></svg>
@@ -804,23 +804,23 @@
     <div class="protections">
       <div class="protection-item">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/><circle cx="7" cy="15" r="1"/></svg>
-        <span>Garantía de pago</span>
+        <span data-i18n="prot_payment">Garantía de pago</span>
       </div>
       <div class="protection-item">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 018 0v3"/></svg>
-        <span>Privacidad de datos</span>
+        <span data-i18n="prot_privacy">Privacidad de datos</span>
       </div>
       <div class="protection-item">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/></svg>
-        <span>Protección de envío</span>
+        <span data-i18n="prot_shipping">Protección de envío</span>
       </div>
       <div class="protection-item">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9.5 15V9.5a2 2 0 012-2h1a2 2 0 010 4h-3M9.5 12.5H13a2 2 0 010 4h-1a2 2 0 01-2-2"/></svg>
-        <span>Garantía de reembolso</span>
+        <span data-i18n="prot_refund">Garantía de reembolso</span>
       </div>
       <div class="protection-item">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.5 8.5 0 10-15.3 5.2L4 20l3.5-1.5a8.5 8.5 0 0013.5-7z"/></svg>
-        <span>Soporte 24h</span>
+        <span data-i18n="prot_support">Soporte 24h</span>
       </div>
     </div>
     <div class="payment-badges">
@@ -849,12 +849,12 @@
         <span style="color:#fff;font-size:11px;font-weight:800;letter-spacing:.02em;">OXXO</span>
       </div>
     </div>
-    <div class="payment-note">Aceptamos estos métodos de pago. Tu información de pago está cifrada y nunca se comparte.</div>
+    <div class="payment-note" data-i18n="payment_note">Aceptamos estos métodos de pago. Tu información de pago está cifrada y nunca se comparte.</div>
   </div>
 
   <!-- Reviews -->
   <div class="section" id="reviewsSection">
-    <div class="section-label" style="margin-bottom:16px;">Valoraciones de clientes</div>
+    <div class="section-label" style="margin-bottom:16px;" data-i18n="reviews_title">Valoraciones de clientes</div>
     <div class="reviews-summary">
       <div class="reviews-score-block">
         <div class="reviews-score">4.8</div>
@@ -865,7 +865,7 @@
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
         </div>
-        <div class="reviews-count">327 valoraciones</div>
+        <div class="reviews-count" data-i18n="reviews_count">327 valoraciones</div>
       </div>
       <div class="rating-bars">
         <div class="rating-bar-row"><span>95</span><div class="rating-bar-track"><div class="rating-bar-fill" style="width:82%"></div></div></div>
@@ -881,7 +881,7 @@
         <div class="review-avatar">M</div>
         <div class="review-meta">
           <div class="review-name">M**** R.</div>
-          <div class="review-date">12 sept 2026 · Color: Burdeos</div>
+          <div class="review-date" data-i18n="review1_date">12 sept 2026 · Color: Burdeos</div>
         </div>
       </div>
       <div class="review-stars-row">
@@ -891,7 +891,7 @@
         <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
         <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
       </div>
-      <p class="review-text">AJJAAJ no me la creía para nada cuando lo vi por primera vez me salió un 99% de descuento y quedé tipo: bueno fueee, lo compro y q sea lo q Dios quiera JAJAJAA y bueeeeno acá estoyyyy todavía no caigo que pagué €8 por este iPhone osea khéeee rendida quedé😶‍</p>
+      <p class="review-text" data-i18n="review1_text">AJJAAJ no me la creía para nada cuando lo vi por primera vez me salió un 99% de descuento y quedé tipo: bueno fueee, lo compro y q sea lo q Dios quiera JAJAJAA y bueeeeno acá estoyyyy todavía no caigo que pagué €8 por este iPhone osea khéeee rendida quedé😶‍</p>
       <div class="review-photos">
         <div class="review-photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9.5" r="1.5"/><path d="M21 15l-5-5-4 4-2-2-6 6"/></svg><img src="images/reviews/review-1-1.jpg" alt="Foto de la reseña de M**** R." onerror="tryNextExt(this)"></div>
       </div>
@@ -902,7 +902,7 @@
         <div class="review-avatar">J</div>
         <div class="review-meta">
           <div class="review-name">J**** P.</div>
-          <div class="review-date">3 sept 2026 · Color: Burdeos</div>
+          <div class="review-date" data-i18n="review2_date">3 sept 2026 · Color: Burdeos</div>
         </div>
       </div>
       <div class="review-stars-row">
@@ -912,7 +912,7 @@
         <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
       </div>
-      <p class="review-text">creo que soy la persona con más suerte del mundo, giré la ruleta y me salió 99% de descuento, también lo terminé comprando por €10 jjajajaaj</p>
+      <p class="review-text" data-i18n="review2_text">creo que soy la persona con más suerte del mundo, giré la ruleta y me salió 99% de descuento, también lo terminé comprando por €10 jjajajaaj</p>
       <div class="review-photos">
         <div class="review-photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9.5" r="1.5"/><path d="M21 15l-5-5-4 4-2-2-6 6"/></svg><img src="images/reviews/review-2-1.jpg" alt="Foto de la reseña de J**** P." onerror="tryNextExt(this)"></div>
       </div>
@@ -924,7 +924,7 @@
           <div class="review-avatar">C</div>
           <div class="review-meta">
             <div class="review-name">C**** L.</div>
-            <div class="review-date">28 ago 2026 · Color: Burdeos</div>
+            <div class="review-date" data-i18n="review3_date">28 ago 2026 · Color: Burdeos</div>
           </div>
         </div>
         <div class="review-stars-row">
@@ -934,7 +934,7 @@
           <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
           <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
         </div>
-        <p class="review-text">Llegó al toque, súper bien empaquetado y va fino fino, 100% recomendado</p>
+        <p class="review-text" data-i18n="review3_text">Llegó al toque, súper bien empaquetado y va fino fino, 100% recomendado</p>
       </div>
 
       <div class="review-card">
@@ -942,7 +942,7 @@
           <div class="review-avatar">A</div>
           <div class="review-meta">
             <div class="review-name">A**** G.</div>
-            <div class="review-date">20 ago 2026 · Color: Burdeos</div>
+            <div class="review-date" data-i18n="review4_date">20 ago 2026 · Color: Burdeos</div>
           </div>
         </div>
         <div class="review-stars-row">
@@ -952,7 +952,7 @@
           <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
           <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
         </div>
-        <p class="review-text">embalaje impecable y tira que da gusto, ¡compraza!</p>
+        <p class="review-text" data-i18n="review4_text">embalaje impecable y tira que da gusto, ¡compraza!</p>
       </div>
 
       <div class="review-card">
@@ -960,7 +960,7 @@
           <div class="review-avatar">P</div>
           <div class="review-meta">
             <div class="review-name">P**** M.</div>
-            <div class="review-date">15 ago 2026 · Color: Burdeos</div>
+            <div class="review-date" data-i18n="review5_date">15 ago 2026 · Color: Burdeos</div>
           </div>
         </div>
         <div class="review-stars-row">
@@ -970,7 +970,7 @@
           <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
         </div>
-        <p class="review-text">¡un 10 de 10!</p>
+        <p class="review-text" data-i18n="review5_text">¡un 10 de 10!</p>
       </div>
 
       <div class="review-card">
@@ -978,7 +978,7 @@
           <div class="review-avatar">L</div>
           <div class="review-meta">
             <div class="review-name">L**** F.</div>
-            <div class="review-date">9 ago 2026 · Color: Burdeos</div>
+            <div class="review-date" data-i18n="review6_date">9 ago 2026 · Color: Burdeos</div>
           </div>
         </div>
         <div class="review-stars-row">
@@ -988,7 +988,7 @@
           <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
           <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
         </div>
-        <p class="review-text">¡Buenísimo! 100% recomendado</p>
+        <p class="review-text" data-i18n="review6_text">¡Buenísimo! 100% recomendado</p>
       </div>
 
       <div class="review-card">
@@ -996,7 +996,7 @@
           <div class="review-avatar">S</div>
           <div class="review-meta">
             <div class="review-name">S**** V.</div>
-            <div class="review-date">2 ago 2026 · Color: Burdeos</div>
+            <div class="review-date" data-i18n="review7_date">2 ago 2026 · Color: Burdeos</div>
           </div>
         </div>
         <div class="review-stars-row">
@@ -1006,44 +1006,44 @@
           <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
           <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
         </div>
-        <p class="review-text">¡De lujo! Llegó súper rápido, impecable y tira increíble, ¡compra perfecta!</p>
+        <p class="review-text" data-i18n="review7_text">¡De lujo! Llegó súper rápido, impecable y tira increíble, ¡compra perfecta!</p>
       </div>
     </div>
 
-    <button class="reviews-more-btn" id="reviewsMoreBtn">Ver todas las valoraciones</button>
+    <button class="reviews-more-btn" id="reviewsMoreBtn" data-i18n="reviews_more">Ver todas las valoraciones</button>
   </div>
 
   <!-- Description -->
   <div class="section" id="descSection">
-    <div class="desc-heading">Sobre este producto</div>
-    <div class="desc-subheading">Descripción</div>
+    <div class="desc-heading" data-i18n="desc_heading">Sobre este producto</div>
+    <div class="desc-subheading" data-i18n="desc_subheading">Descripción</div>
     <p class="desc-text"><span class="desc-title-strong">Apple iPhone 18 Pro Max 256GB</span><br><br>
-      <span>Mucho Pro. iPhone 18 Pro y Pro Max. Cámara Fusion de 48 Mpx con apertura variable. Mejores fotos y vídeos con poca luz. Una profundidad de campo impresionante.</span>
+      <span data-i18n="desc_text">Mucho Pro. iPhone 18 Pro y Pro Max. Cámara Fusion de 48 Mpx con apertura variable. Mejores fotos y vídeos con poca luz. Una profundidad de campo impresionante.</span>
     </p>
     <ul class="feature-list">
-      <li><b>Sistema Operativo</b> iOS</li>
-      <li><b>Procesador</b> Chip A20 Pro</li>
-      <li><b>Capacidad memoria</b> 256 GB</li>
-      <li><b>Asistente de inteligencia artificial integrado</b>: Apple Intelligence</li>
-      <li><b>Tamaño pantalla </b> 	17.5 cm</li>
+      <li><b data-i18n="feat_os_b">Sistema Operativo</b> <span data-i18n="feat_os_v">iOS</span></li>
+      <li><b data-i18n="feat_cpu_b">Procesador</b> <span data-i18n="feat_cpu_v">Chip A20 Pro</span></li>
+      <li><b data-i18n="feat_mem_b">Capacidad memoria</b> <span data-i18n="feat_mem_v">256 GB</span></li>
+      <li><b data-i18n="feat_ai_b">Asistente de inteligencia artificial integrado</b>: <span data-i18n="feat_ai_v">Apple Intelligence</span></li>
+      <li><b data-i18n="feat_screen_b">Tamaño pantalla </b> 	<span data-i18n="feat_screen_v">17.5 cm</span></li>
     </ul>
     <div class="more-content" id="moreContent">
-      <p class="desc-text">
+      <p class="desc-text" data-i18n="desc_more">
         Capacidades de Machine learning, Escritura y texto predictivo, Biométricas, Asistente virtual, Procesador IA, Reconocimiento de voz, Mejoras en la cámara con IA, Gestión inteligente de la batería
       </p>
     </div>
     <button class="view-more-btn" id="viewMoreBtn" onclick="toggleMore()">
-      <span id="viewMoreText">Ver más</span>
+      <span id="viewMoreText" data-i18n="view_more">Ver más</span>
       <svg id="viewMoreIcon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
     </button>
 
     <div class="accordion">
       <div class="accordion-item">
         <button class="accordion-head" onclick="toggleAccordion(this)">
-          <span>Detalles</span>
+          <span data-i18n="accordion_details">Detalles</span>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
         </button>
-   <div class="accordion-body">
+   <div class="accordion-body" data-i18n-html="accordion_details_body">
   <b>Marca:</b> Apple &nbsp;·&nbsp; <b>Modelo:</b> iPhone 18 Pro Max<br>
   <b>Chip:</b> A20 Pro (2 nm) &nbsp;·&nbsp; <b>CPU:</b> 6 núcleos (2 de alto rendimento + 4 de eficiência)<br>
   <b>GPU:</b> 7 núcleos com acelerador neural &nbsp;·&nbsp; <b>Motor Neural:</b> Duplo de 16 núcleos (32 no total)<br>
@@ -1059,10 +1059,10 @@
       </div>
       <div class="accordion-item">
         <button class="accordion-head" onclick="toggleAccordion(this)">
-          <span>Seguridad y conformidad</span>
+          <span data-i18n="accordion_security">Seguridad y conformidad</span>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
         </button>
-        <div class="accordion-body">
+        <div class="accordion-body" data-i18n="accordion_security_body">
           	Cámara principal Fusion de 48 Mpx con apertura variable (ƒ/1,48, ƒ/1,8, ƒ/2,8 y ƒ/4) y teleobjetivo x2 de 12 Mpx 48 mm + Ultra gran angular Fusion de 48 Mpx: 13 mm, apertura de ƒ/2,2, campo de visión de 120° y teleobjetivo x8 de 12 Mpx 200 mm ƒ/2,8. Zoom óptico de acercamiento x8, de alejamiento x2, rango x16 y zoom digital hasta x40. Flash True Tone adaptativo. HDR Inteligente 5. Grabación de vídeo en 4K con Dolby Vision a 24, 25, 30, 60, 100 o 120 f/s.
         </div>
       </div>
@@ -1071,17 +1071,17 @@
 
 </div>
 
-<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">Volver arriba</button>
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" data-i18n="back_to_top">Volver arriba</button>
 
 <div class="bottom-bar">
   <div class="bottom-bar-inner">
     <button class="bb-icon" id="bookmarkBtn2" aria-label="Guardar">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg>
     </button>
-    <button class="bb-btn cart" id="addToCartBtn">Añadir al carrito</button>
+    <button class="bb-btn cart" id="addToCartBtn" data-i18n="add_to_cart">Añadir al carrito</button>
     <!-- Checkout link: don't edit this href by hand — it's overwritten on load from
          CHECKOUT_URL near the top of the <script> at the bottom of this file. -->
-    <a class="bb-btn checkout" id="mainCheckoutBtn" href="https://pay.hotmart.com/W107685846P?off=smd14kdc" target="_blank" rel="noopener noreferrer">Finalizar compra</a>
+    <a class="bb-btn checkout" id="mainCheckoutBtn" href="https://pay.hotmart.com/W107685846P?off=smd14kdc" target="_blank" rel="noopener noreferrer" data-i18n="checkout">Finalizar compra</a>
   </div>
 </div>
 
@@ -1101,7 +1101,7 @@
       <span class="sales-time" id="salesTime"></span>
       <span class="sales-verified">
         <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-        <span>Compra verificada</span>
+        <span data-i18n="verified_purchase">Compra verificada</span>
       </span>
     </div>
   </div>
@@ -1109,6 +1109,256 @@
 </div>
 
 <script>
+  // =====================================================================
+  // i18n — Spanish (default) / German, auto-detected by timezone + browser
+  // language. No external requests, no FOUC, no selector.
+  // =====================================================================
+  (function(){
+    var TIMEZONE = '';
+    try { TIMEZONE = Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch(e) {}
+    var LANG = (navigator.language || navigator.userLanguage || '').toLowerCase();
+    var IS_GERMANY = TIMEZONE === 'Europe/Berlin' ||
+                     TIMEZONE === 'Europe/Vienna' ||
+                     TIMEZONE === 'Europe/Zurich' ||
+                     LANG.indexOf('de') === 0;
+    var LOCALE = IS_GERMANY ? 'de' : 'es';
+    window.__LOCALE__ = LOCALE;
+    document.documentElement.setAttribute('lang', LOCALE);
+  })();
+
+  // Translation dictionaries — every user-visible string lives here.
+  var I18N = {
+    es: {
+      roulette_pill: 'Oferta exclusiva',
+      wheel_5off: '5% OFF',
+      wheel_1spin: '+1 GIRO',
+      wheel_99off: '99%% OFF',
+      wheel_15off: '15% OFF',
+      wheel_spin: 'Girar',
+      roulette_subtitle: 'Tienes 3 intentos. ¡Buena suerte!',
+      roulette_cta: 'Aplicar descuento y ver el iphone',
+      roulette_bonus: 'Has ganado 1 oportunidad extra. Gira de nuevo.',
+      roulette_win: 'Enhorabuena. Ganaste un 99% de descuento.',
+      cart_title: 'Tu carrito',
+      cart_item_title: 'Apple iPhone 18 Pro Max 256GB',
+      cart_remove: 'Quitar',
+      cart_total: 'Total',
+      cart_checkout: 'Finalizar compra',
+      cart_continue: 'Seguir comprando',
+      gallery_placeholder: 'Imagen del producto próximamente',
+      price_vat: 'Impuestos incluidos',
+      ship_free: 'Envío gratis',
+      ship_delivery: 'Entrega en 48 horas',
+      ship_free_eu: 'Envío gratis a todo Europa',
+      discount_applied: 'Descuento de la ruleta aplicado a tu compra',
+      product_title: 'Apple iPhone 18 Pro Max, Burdeos, 256 GB, 6.9" OLED Super Retina XDR, 5G, Chip A20 Pro, Siri AI, iOS',
+      seller_sold_by: 'Vendido por',
+      sold_count: '574 vendidos',
+      badge_return: 'Garantía de devolución 30 días',
+      badge_coupon: 'Cupón de 99% de descuento',
+      color_label: 'Color:',
+      color_burgundy: 'Burdeos',
+      ship_returns_title: 'Envío y devoluciones',
+      ship_48_title: 'Entrega en 48 horas',
+      ship_48_sub_1: 'Recíbelo en un plazo de',
+      ship_48_sub_b: '48 horas',
+      ship_48_sub_2: 'tras la confirmación del pedido',
+      return_title: 'Política de devolución',
+      return_sub: 'Devolución gratuita en 30 días. No se necesita etiqueta en la mayoría de los casos.',
+      prot_payment: 'Garantía de pago',
+      prot_privacy: 'Privacidad de datos',
+      prot_shipping: 'Protección de envío',
+      prot_refund: 'Garantía de reembolso',
+      prot_support: 'Soporte 24h',
+      payment_note: 'Aceptamos estos métodos de pago. Tu información de pago está cifrada y nunca se comparte.',
+      reviews_title: 'Valoraciones de clientes',
+      reviews_count: '327 valoraciones',
+      review1_date: '12 sept 2026 · Color: Burdeos',
+      review1_text: 'AJJAAJ no me la creía para nada cuando lo vi por primera vez me salió un 99% de descuento y quedé tipo: bueno fueee, lo compro y q sea lo q Dios quiera JAJAJAA y bueeeeno acá estoyyyy todavía no caigo que pagué €8 por este iPhone osea khéeee rendida quedé😶‍',
+      review2_date: '3 sept 2026 · Color: Burdeos',
+      review2_text: 'creo que soy la persona con más suerte del mundo, giré la ruleta y me salió 99% de descuento, también lo terminé comprando por €10 jjajajaaj',
+      review3_date: '28 ago 2026 · Color: Burdeos',
+      review3_text: 'Llegó al toque, súper bien empaquetado y va fino fino, 100% recomendado',
+      review4_date: '20 ago 2026 · Color: Burdeos',
+      review4_text: 'embalaje impecable y tira que da gusto, ¡compraza!',
+      review5_date: '15 ago 2026 · Color: Burdeos',
+      review5_text: '¡un 10 de 10!',
+      review6_date: '9 ago 2026 · Color: Burdeos',
+      review6_text: '¡Buenísimo! 100% recomendado',
+      review7_date: '2 ago 2026 · Color: Burdeos',
+      review7_text: '¡De lujo! Llegó súper rápido, impecable y tira increíble, ¡compra perfecta!',
+      reviews_more: 'Ver todas las valoraciones',
+      desc_heading: 'Sobre este producto',
+      desc_subheading: 'Descripción',
+      desc_text: 'Mucho Pro. iPhone 18 Pro y Pro Max. Cámara Fusion de 48 Mpx con apertura variable. Mejores fotos y vídeos con poca luz. Una profundidad de campo impresionante.',
+      feat_os_b: 'Sistema Operativo',
+      feat_os_v: 'iOS',
+      feat_cpu_b: 'Procesador',
+      feat_cpu_v: 'Chip A20 Pro',
+      feat_mem_b: 'Capacidad memoria',
+      feat_mem_v: '256 GB',
+      feat_ai_b: 'Asistente de inteligencia artificial integrado',
+      feat_ai_v: 'Apple Intelligence',
+      feat_screen_b: 'Tamaño pantalla',
+      feat_screen_v: '17.5 cm',
+      desc_more: 'Capacidades de Machine learning, Escritura y texto predictivo, Biométricas, Asistente virtual, Procesador IA, Reconocimiento de voz, Mejoras en la cámara con IA, Gestión inteligente de la batería',
+      view_more: 'Ver más',
+      view_less: 'Ver menos',
+      accordion_details: 'Detalles',
+      accordion_details_body: '<b>Marca:</b> Apple &nbsp;·&nbsp; <b>Modelo:</b> iPhone 18 Pro Max<br><b>Chip:</b> A20 Pro (2 nm) &nbsp;·&nbsp; <b>CPU:</b> 6 núcleos (2 de alto rendimento + 4 de eficiência)<br><b>GPU:</b> 7 núcleos com acelerador neural &nbsp;·&nbsp; <b>Motor Neural:</b> Duplo de 16 núcleos (32 no total)<br><b>Ecrã:</b> 6,9" Super Retina XDR OLED &nbsp;·&nbsp; <b>Resolução:</b> 2868 x 1320 píxeis a 460 ppi<br><b>Taxa de atualização:</b> ProMotion adaptativo até 120 Hz &nbsp;·&nbsp; <b>Brilho:</b> até 3000 nits (exterior)<br><b>Câmara principal:</b> Fusion de 48 MP com abertura variável (ƒ/1.48, ƒ/1.8, ƒ/2.8, ƒ/4.0)<br><b>Outras câmaras:</b> Ultra grande angular de 48 MP &nbsp;·&nbsp; Teleobjetiva de 48 MP (4x/8x)<br><b>Autonomia:</b> até 43 h de reprodução de vídeo &nbsp;·&nbsp; <b>Carga rápida:</b> 50 % em 15 min (com fio)<br><b>Conectividade:</b> Wi-Fi 7 &nbsp;·&nbsp; Bluetooth 6 &nbsp;·&nbsp; 5G &nbsp;·&nbsp; Chip N1 &nbsp;·&nbsp; <b>SIM:</b> eSIM (em modelos compatíveis)<br><b>Resistência:</b> IP68 (até 6 m durante 30 min) &nbsp;·&nbsp; <b>Peso:</b> 249 g<br><b>Armazenamento:</b> 256 GB / 512 GB / 1 TB / 2 TB &nbsp;·&nbsp; <b>Cores:</b> Preto, Prateado, Azul Glaciar, Vinho Borgonha',
+      accordion_security: 'Seguridad y conformidad',
+      accordion_security_body: '\tCámara principal Fusion de 48 Mpx con apertura variable (ƒ/1,48, ƒ/1,8, ƒ/2,8 y ƒ/4) y teleobjetivo x2 de 12 Mpx 48 mm + Ultra gran angular Fusion de 48 Mpx: 13 mm, apertura de ƒ/2,2, campo de visión de 120° y teleobjetivo x8 de 12 Mpx 200 mm ƒ/2,8. Zoom óptico de acercamiento x8, de alejamiento x2, rango x16 y zoom digital hasta x40. Flash True Tone adaptativo. HDR Inteligente 5. Grabación de vídeo en 4K con Dolby Vision a 24, 25, 30, 60, 100 o 120 f/s.',
+      back_to_top: 'Volver arriba',
+      add_to_cart: 'Añadir al carrito',
+      checkout: 'Finalizar compra',
+      verified_purchase: 'Compra verificada',
+      toast_added: 'Añadido al carrito',
+      toast_saved: 'Guardado',
+      toast_unsaved: 'Eliminado de guardados',
+      toast_empty: 'Tu carrito está vacío',
+      toast_discount: 'Descuento del 99% aplicado',
+      toast_reviews: 'Mostrando todas las valoraciones',
+      toast_max: 'Solo hay 3 unidades disponibles',
+      notif_buying: 'está comprando este iphone',
+      notif_bought: 'compró este iphone',
+      time_now: 'Ahora mismo',
+      time_min: 'hace 1 minuto',
+      time_mins: 'hace {n} minutos'
+    },
+    de: {
+      roulette_pill: 'Exklusives Angebot',
+      wheel_5off: '5% RABATT',
+      wheel_1spin: '+1 DREH',
+      wheel_99off: '99%% RABATT',
+      wheel_15off: '15% RABATT',
+      wheel_spin: 'Drehen',
+      roulette_subtitle: 'Du hast 3 Versuche. Viel Glück!',
+      roulette_cta: 'Rabatt anwenden und iPhone ansehen',
+      roulette_bonus: 'Du hast 1 Extra-Chance gewonnen. Dreh nochmal.',
+      roulette_win: 'Glückwunsch. Du hast 99% Rabatt gewonnen.',
+      cart_title: 'Dein Warenkorb',
+      cart_item_title: 'Apple iPhone 18 Pro Max 256GB',
+      cart_remove: 'Entfernen',
+      cart_total: 'Gesamt',
+      cart_checkout: 'Zur Kasse',
+      cart_continue: 'Weiter einkaufen',
+      gallery_placeholder: 'Produktbild folgt in Kürze',
+      price_vat: 'inkl. MwSt.',
+      ship_free: 'Versandkostenfrei',
+      ship_delivery: 'Lieferung in 48 Stunden',
+      ship_free_eu: 'Kostenloser Versand in ganz Europa',
+      discount_applied: 'Glücksrad-Rabatt auf deine Bestellung angewendet',
+      product_title: 'Apple iPhone 18 Pro Max, Burgunderrot, 256 GB, 6,9" OLED Super Retina XDR, 5G, A20 Pro Chip, Siri AI, iOS',
+      seller_sold_by: 'Verkauft von',
+      sold_count: '574 verkauft',
+      badge_return: '30 Tage Rückgabegarantie',
+      badge_coupon: '99% Rabattgutschein',
+      color_label: 'Farbe:',
+      color_burgundy: 'Burgunderrot',
+      ship_returns_title: 'Versand & Rückgabe',
+      ship_48_title: 'Lieferung in 48 Stunden',
+      ship_48_sub_1: 'Erhalte es innerhalb von',
+      ship_48_sub_b: '48 Stunden',
+      ship_48_sub_2: 'nach Bestätigung der Bestellung',
+      return_title: 'Rückgaberecht',
+      return_sub: 'Kostenlose Rückgabe innerhalb von 30 Tagen. In den meisten Fällen ist kein Etikett erforderlich.',
+      prot_payment: 'Zahlungsgarantie',
+      prot_privacy: 'Datenschutz',
+      prot_shipping: 'Versandschutz',
+      prot_refund: 'Rückerstattungsgarantie',
+      prot_support: '24h Support',
+      payment_note: 'Wir akzeptieren diese Zahlungsmethoden. Deine Zahlungsinformationen sind verschlüsselt und werden niemals weitergegeben.',
+      reviews_title: 'Kundenbewertungen',
+      reviews_count: '327 Bewertungen',
+      review1_date: '12. Sept. 2026 · Farbe: Burgunderrot',
+      review1_text: 'HAHAHA ich konnte es echt nicht glauben, als ich es zum ersten Mal gesehen hab, kam ein 99% Rabatt und ich dachte nur: okay krass, ich kaufs und schauen wir mal was passiert HAHAHA und naja hier bin ich, ich fass es immer noch nicht, dass ich nur 8€ für dieses iPhone gezahlt hab, ehrlich WIE?!',
+      review2_date: '3. Sept. 2026 · Farbe: Burgunderrot',
+      review2_text: 'ich glaub ich bin der glücklichste Mensch der Welt, hab am Glücksrad gedreht und 99% Rabatt bekommen, hab es dann für 10€ gekauft hahahaha',
+      review3_date: '28. Aug. 2026 · Farbe: Burgunderrot',
+      review3_text: 'Kam super schnell an, top verpackt und läuft mega gut, 100% zu empfehlen',
+      review4_date: '20. Aug. 2026 · Farbe: Burgunderrot',
+      review4_text: 'Verpackung einwandfrei und die Performance ist der Wahnsinn, was ein Kauf!',
+      review5_date: '15. Aug. 2026 · Farbe: Burgunderrot',
+      review5_text: '10 von 10!',
+      review6_date: '9. Aug. 2026 · Farbe: Burgunderrot',
+      review6_text: 'Absolut top! 100% zu empfehlen',
+      review7_date: '2. Aug. 2026 · Farbe: Burgunderrot',
+      review7_text: 'Erstklassig! Kam super schnell, einwandfrei und läuft fantastisch, perfekter Kauf!',
+      reviews_more: 'Alle Bewertungen ansehen',
+      desc_heading: 'Über dieses Produkt',
+      desc_subheading: 'Beschreibung',
+      desc_text: 'Viel Pro. iPhone 18 Pro und Pro Max. 48-MP-Fusion-Kamera mit variabler Blende. Bessere Fotos und Videos bei wenig Licht. Beeindruckende Tiefenschärfe.',
+      feat_os_b: 'Betriebssystem',
+      feat_os_v: 'iOS',
+      feat_cpu_b: 'Prozessor',
+      feat_cpu_v: 'A20 Pro Chip',
+      feat_mem_b: 'Speicherkapazität',
+      feat_mem_v: '256 GB',
+      feat_ai_b: 'Integrierter KI-Assistent',
+      feat_ai_v: 'Apple Intelligence',
+      feat_screen_b: 'Bildschirmgröße',
+      feat_screen_v: '17,5 cm',
+      desc_more: 'Machine-Learning-Funktionen, Schreiben und prädiktiver Text, Biometrie, virtueller Assistent, KI-Prozessor, Spracherkennung, KI-Kameraverbesserungen, intelligentes Batteriemanagement',
+      view_more: 'Mehr anzeigen',
+      view_less: 'Weniger anzeigen',
+      accordion_details: 'Details',
+      accordion_details_body: '<b>Marke:</b> Apple &nbsp;·&nbsp; <b>Modell:</b> iPhone 18 Pro Max<br><b>Chip:</b> A20 Pro (2 nm) &nbsp;·&nbsp; <b>CPU:</b> 6 Kerne (2 Hochleistungs- + 4 Effizienzkerne)<br><b>GPU:</b> 7 Kerne mit Neural Accelerator &nbsp;·&nbsp; <b>Neural Engine:</b> Doppelt mit 16 Kernen (insgesamt 32)<br><b>Display:</b> 6,9" Super Retina XDR OLED &nbsp;·&nbsp; <b>Auflösung:</b> 2868 x 1320 Pixel bei 460 ppi<br><b>Bildwiederholrate:</b> Adaptives ProMotion bis 120 Hz &nbsp;·&nbsp; <b>Helligkeit:</b> bis 3000 nits (außen)<br><b>Hauptkamera:</b> 48 MP Fusion mit variabler Blende (ƒ/1,48, ƒ/1,8, ƒ/2,8, ƒ/4,0)<br><b>Weitere Kameras:</b> 48 MP Ultraweitwinkel &nbsp;·&nbsp; 48 MP Teleobjektiv (4x/8x)<br><b>Akku:</b> bis zu 43 h Videowiedergabe &nbsp;·&nbsp; <b>Schnellladen:</b> 50 % in 15 Min. (kabelgebunden)<br><b>Konnektivität:</b> Wi-Fi 7 &nbsp;·&nbsp; Bluetooth 6 &nbsp;·&nbsp; 5G &nbsp;·&nbsp; N1 Chip &nbsp;·&nbsp; <b>SIM:</b> eSIM (bei kompatiblen Modellen)<br><b>Wasserfest:</b> IP68 (bis 6 m für 30 Min.) &nbsp;·&nbsp; <b>Gewicht:</b> 249 g<br><b>Speicher:</b> 256 GB / 512 GB / 1 TB / 2 TB &nbsp;·&nbsp; <b>Farben:</b> Schwarz, Silber, Eisblau, Burgunderrot',
+      accordion_security: 'Sicherheit und Konformität',
+      accordion_security_body: '\t48-MP-Fusion-Hauptkamera mit variabler Blende (ƒ/1,48, ƒ/1,8, ƒ/2,8 und ƒ/4) und 12-MP-Teleobjektiv x2 bei 48 mm + 48-MP-Fusion-Ultraweitwinkel: 13 mm, Blende ƒ/2,2, 120° Sichtfeld und 12-MP-Teleobjektiv x8 bei 200 mm ƒ/2,8. Optischer Zoom x8 hinein, x2 heraus, Bereich x16 und digitaler Zoom bis x40. Adaptiver True Tone Blitz. Intelligentes HDR 5. 4K-Videoaufnahme mit Dolby Vision bei 24, 25, 30, 60, 100 oder 120 fps.',
+      back_to_top: 'Nach oben',
+      add_to_cart: 'In den Warenkorb',
+      checkout: 'Zur Kasse',
+      verified_purchase: 'Verifizierter Kauf',
+      toast_added: 'Zum Warenkorb hinzugefügt',
+      toast_saved: 'Gespeichert',
+      toast_unsaved: 'Aus Gespeichertem entfernt',
+      toast_empty: 'Dein Warenkorb ist leer',
+      toast_discount: '99% Rabatt angewendet',
+      toast_reviews: 'Alle Bewertungen werden angezeigt',
+      toast_max: 'Nur 3 Einheiten verfügbar',
+      notif_buying: 'kauft gerade dieses iPhone',
+      notif_bought: 'hat dieses iPhone gekauft',
+      time_now: 'Gerade jetzt',
+      time_min: 'vor 1 Minute',
+      time_mins: 'vor {n} Minuten'
+    }
+  };
+
+  function t(key){
+    var dict = I18N[window.__LOCALE__] || I18N.es;
+    return dict[key] != null ? dict[key] : (I18N.es[key] != null ? I18N.es[key] : key);
+  }
+  window.t = t;
+
+  // Apply translations to all data-i18n / data-i18n-html elements
+  function applyI18n(){
+    document.querySelectorAll('[data-i18n]').forEach(function(el){
+      var key = el.getAttribute('data-i18n');
+      var val = t(key);
+      if (val != null) el.textContent = val;
+    });
+    document.querySelectorAll('[data-i18n-html]').forEach(function(el){
+      var key = el.getAttribute('data-i18n-html');
+      var val = t(key);
+      if (val != null) el.innerHTML = val;
+    });
+    // Sync document title too
+    document.title = 'iPhone 18 Pro Max 256GB';
+  }
+
+  // Money formatting: DE uses 1.619,00 € / ES uses €1.619,00
+  function formatMoneyI18n(n){
+    if (window.__LOCALE__ === 'de'){
+      var parts = n.toFixed(2).split('.');
+      parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+      return parts.join(',') + ' €';
+    }
+    var parts = n.toFixed(2).split('.');
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+    return '€' + parts.join(',');
+  }
+  window.formatMoneyI18n = formatMoneyI18n;
+
   // Try alternate image extensions before falling back to the placeholder icon.
   // This way it doesn't matter if a replaced photo was saved as .jpg, .jpeg, .png or .webp.
   function tryNextExt(img){
@@ -1135,6 +1385,7 @@
   // fill them into QTY_CHECKOUT_LINKS further down instead of here.
   // =====================================================================
   var CHECKOUT_URL = 'https://pay.hotmart.com/W107685846P?off=smd14kdc';
+  var BASE_CHECKOUT_URL = CHECKOUT_URL;
   document.getElementById('mainCheckoutBtn').setAttribute('href', CHECKOUT_URL);
   document.getElementById('cartCheckoutBtn').setAttribute('href', CHECKOUT_URL);
 
@@ -1167,9 +1418,8 @@
   };
 
   function formatMoney(n){
-    var parts = n.toFixed(2).split('.');
-    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-    return '€' + parts.join('.');
+    // Legacy wrapper — now respects the detected locale (ES vs DE)
+    return formatMoneyI18n(n);
   }
   function cartTotalFor(qty){
     var override = QTY_PRICES[qty];
@@ -1202,7 +1452,7 @@
   });
   document.getElementById('cartQtyPlus').addEventListener('click', function(){
     if (cartQty >= MAX_QTY) {
-      showToast('Solo hay ' + MAX_QTY + ' unidades disponibles');
+      showToast(t('toast_max'));
       return;
     }
     cartQty++;
@@ -1251,7 +1501,10 @@
     sw.addEventListener('click', function(){
       swatches.forEach(function(s){ s.classList.remove('selected'); });
       sw.classList.add('selected');
-      colorLabel.textContent = sw.getAttribute('data-color');
+      var c = sw.getAttribute('data-color');
+      // Translate the visible label using the i18n dictionary
+      if (c === 'Burdeos') colorLabel.textContent = t('color_burgundy');
+      else colorLabel.textContent = c;
     });
   });
 
@@ -1261,7 +1514,8 @@
     var text = document.getElementById('viewMoreText');
     var icon = document.getElementById('viewMoreIcon');
     var open = content.classList.toggle('open');
-    text.textContent = open ? 'Ver menos' : 'Ver más';
+    text.textContent = open ? t('view_less') : t('view_more');
+    text.setAttribute('data-i18n', open ? 'view_less' : 'view_more');
     icon.style.transform = open ? 'rotate(180deg)' : 'rotate(0deg)';
   }
 
@@ -1290,18 +1544,18 @@
   }
   document.getElementById('addToCartBtn').addEventListener('click', function(){
     if (cartQty >= MAX_QTY) {
-      showToast('Solo hay ' + MAX_QTY + ' unidades disponibles');
+      showToast(t('toast_max'));
       return;
     }
     cartQty++;
     renderCart();
-    showToast('Añadido al carrito');
+    showToast(t('toast_added'));
   });
   document.getElementById('cartTopBtn').addEventListener('click', function(){
     if (cartQty > 0) {
       openCart();
     } else {
-      showToast('Tu carrito está vacío');
+      showToast(t('toast_empty'));
     }
   });
   var reviewsMoreBtn = document.getElementById('reviewsMoreBtn');
@@ -1309,7 +1563,7 @@
   reviewsMoreBtn.addEventListener('click', function(){
     moreReviews.classList.add('open');
     reviewsMoreBtn.remove();
-    showToast('Mostrando todas las valoraciones');
+    showToast(t('toast_reviews'));
   });
 
   // Bookmark toggle (top + bottom icon stay in sync)
@@ -1322,7 +1576,7 @@
         b.querySelector('svg').setAttribute('fill', bookmarked ? 'currentColor' : 'none');
         b.style.color = bookmarked ? '#fe2c55' : '#111111';
       });
-      showToast(bookmarked ? 'Guardado' : 'Eliminado de guardados');
+      showToast(bookmarked ? t('toast_saved') : t('toast_unsaved'));
     });
   });
 
@@ -1369,11 +1623,11 @@
       setTimeout(function(){
         spinning = false;
         if (spinCount < 3) {
-          message.textContent = 'Has ganado 1 oportunidad extra. Gira de nuevo.';
+          message.textContent = t('roulette_bonus');
           message.className = 'roulette-message bonus';
           hub.disabled = false;
         } else {
-          message.textContent = 'Enhorabuena. Ganaste un 99% de descuento.';
+          message.textContent = t('roulette_win');
           message.className = 'roulette-message win';
           hub.style.display = 'none';
           cta.classList.add('show');
@@ -1414,7 +1668,7 @@
       var priceCurrent = document.getElementById('priceCurrent');
       var priceDiscount = document.getElementById('priceDiscount');
       var discountBanner = document.getElementById('discountBanner');
-      priceCurrent.innerHTML = '€9<sup>.97</sup>';
+      priceCurrent.innerHTML = (window.__LOCALE__ === 'de') ? '9<sup>.97</sup> €' : '€9<sup>.97</sup>';
       priceDiscount.textContent = '-99%';
       discountBanner.classList.add('show');
       unitPrice = 7.97;
@@ -1427,7 +1681,7 @@
     cta.addEventListener('click', function(){
       applyDiscount();
       closeRoulette();
-      showToast('Descuento del 99% aplicado');
+      showToast(t('toast_discount'));
     });
   })();
 
@@ -1465,9 +1719,9 @@
     var CLOCK_ICON = '<svg class="sales-clock" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>';
 
     function timeLabel(minutes){
-      if (minutes <= 0) return 'Ahora mismo';
-      if (minutes === 1) return 'hace 1 minuto';
-      return 'hace ' + minutes + ' minutos';
+      if (minutes <= 0) return t('time_now');
+      if (minutes === 1) return t('time_min');
+      return t('time_mins').replace('{n}', minutes);
     }
     function pick(){
       var i;
@@ -1492,7 +1746,7 @@
         city.textContent = ' · ' + item.city;
         nameEl.appendChild(city);
       }
-      actionEl.textContent = live ? 'está comprando este iphone' : 'compró este iphone';
+      actionEl.textContent = live ? t('notif_buying') : t('notif_bought');
       timeEl.textContent = timeLabel(item.minutes);
       timeEl.className = 'sales-time' + (live ? ' live' : '');
       iconEl.innerHTML = live ? '<span class="sales-live"></span>' : CLOCK_ICON;
@@ -1520,6 +1774,10 @@
     }
     waitForRoulette();
   })();
+
+  // Apply i18n translations once DOM is ready (also runs immediately since
+  // this script is at the end of <body>, the DOM is already parsed)
+  applyI18n();
 </script>
 </body>
 </html>
