@@ -13,6 +13,81 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <title>IPhone 18 Pro Max 256GB</title>
+<style>html.i18n-loading body{visibility:hidden !important;}</style>
+<script>
+/* =====================================================================
+   GEO-DETECTION BY IP — runs before render, no flash of wrong language.
+   Order of preference:
+     1. sessionStorage cache (instant, no request)
+     2. get.geojs.io (fast, no key, no limit) with 1.5s timeout
+     3. Fallback: timezone + navigator.language (instant)
+   Only two locales: 'de' (Germany) and 'es' (everything else).
+   ===================================================================== */
+(function(){
+  var docEl = document.documentElement;
+  docEl.classList.add('i18n-loading');
+
+  function fallbackLocale(){
+    var tz = '';
+    try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch(e){}
+    var lang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+    var isDE = tz === 'Europe/Berlin' || tz === 'Europe/Vienna' || tz === 'Europe/Zurich' ||
+               lang.indexOf('de') === 0;
+    return isDE ? 'de' : 'es';
+  }
+
+  function commit(locale){
+    window.__LOCALE__ = locale;
+    docEl.setAttribute('lang', locale);
+    docEl.classList.remove('i18n-loading');
+  }
+
+  // 1) sessionStorage cache
+  try {
+    var cached = sessionStorage.getItem('__locale__');
+    if (cached === 'de' || cached === 'es') { commit(cached); return; }
+  } catch(e){}
+
+  // 2) IP-based fetch with timeout
+  var done = false;
+  var timer = setTimeout(function(){
+    if (done) return;
+    done = true;
+    var fb = fallbackLocale();
+    try { sessionStorage.setItem('__locale__', fb); } catch(e){}
+    commit(fb);
+  }, 1500);
+
+  try {
+    fetch('https://get.geojs.io/v1/ip/country.json', { cache: 'force-cache' })
+      .then(function(r){ return r.ok ? r.json() : null; })
+      .then(function(data){
+        if (done) return;
+        done = true;
+        clearTimeout(timer);
+        var country = (data && data.country) ? String(data.country).toUpperCase() : '';
+        var locale = (country === 'DE') ? 'de' : 'es';
+        try { sessionStorage.setItem('__locale__', locale); } catch(e){}
+        commit(locale);
+      })
+      .catch(function(){
+        if (done) return;
+        done = true;
+        clearTimeout(timer);
+        var fb = fallbackLocale();
+        try { sessionStorage.setItem('__locale__', fb); } catch(e){}
+        commit(fb);
+      });
+  } catch(e){
+    if (done) return;
+    done = true;
+    clearTimeout(timer);
+    var fb = fallbackLocale();
+    try { sessionStorage.setItem('__locale__', fb); } catch(e){}
+    commit(fb);
+  }
+})();
+</script>
 <style>
   :root{
     --bg:#f5f5f5;
@@ -1109,23 +1184,6 @@
 </div>
 
 <script>
-  // =====================================================================
-  // i18n — Spanish (default) / German, auto-detected by timezone + browser
-  // language. No external requests, no FOUC, no selector.
-  // =====================================================================
-  (function(){
-    var TIMEZONE = '';
-    try { TIMEZONE = Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch(e) {}
-    var LANG = (navigator.language || navigator.userLanguage || '').toLowerCase();
-    var IS_GERMANY = TIMEZONE === 'Europe/Berlin' ||
-                     TIMEZONE === 'Europe/Vienna' ||
-                     TIMEZONE === 'Europe/Zurich' ||
-                     LANG.indexOf('de') === 0;
-    var LOCALE = IS_GERMANY ? 'de' : 'es';
-    window.__LOCALE__ = LOCALE;
-    document.documentElement.setAttribute('lang', LOCALE);
-  })();
-
   // Translation dictionaries — every user-visible string lives here.
   var I18N = {
     es: {
