@@ -611,7 +611,7 @@
               <span style="transform:rotate(-225deg)">95%% OFF</span>
             </div>
             <div class="wheel-label plain on-pink" style="transform:rotate(315deg) translate(0,-68px)">
-              <span style="transform:rotate(-315deg)">99% OFF</span>
+              <span style="transform:rotate(-315deg)">95% OFF</span>
             </div>
           </div>
         </div>
@@ -755,7 +755,7 @@
     </div>
     <div class="badge-row">
       <span class="badge gray">Garantía de devolución 30 días</span>
-      <span class="badge teal">Cupón de 99% de descuento</span>
+      <span class="badge teal">Cupón de 95% de descuento</span>
     </div>
   </div>
 
@@ -1373,7 +1373,7 @@
           message.className = 'roulette-message bonus';
           hub.disabled = false;
         } else {
-          message.textContent = 'Enhorabuena. Ganaste un 99% de descuento.';
+          message.textContent = 'Enhorabuena. Ganaste un 95% de descuento.';
           message.className = 'roulette-message win';
           hub.style.display = 'none';
           cta.classList.add('show');
@@ -1415,7 +1415,7 @@
       var priceDiscount = document.getElementById('priceDiscount');
       var discountBanner = document.getElementById('discountBanner');
       priceCurrent.innerHTML = '€8<sup>.99</sup>';
-      priceDiscount.textContent = '-99%';
+      priceDiscount.textContent = '-95%';
       discountBanner.classList.add('show');
       unitPrice = 8.99;
       renderCart();
@@ -1427,7 +1427,7 @@
     cta.addEventListener('click', function(){
       applyDiscount();
       closeRoulette();
-      showToast('Descuento del 99% aplicado');
+      showToast('Descuento del 95% aplicado');
     });
   })();
 
